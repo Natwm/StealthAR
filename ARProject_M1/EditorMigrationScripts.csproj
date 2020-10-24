@@ -264,19 +264,19 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/ARProject_M1/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/ARProject_M1/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="Vuforia.UnityExtensions.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/ARProject_M1/Library/PackageCache/com.ptc.vuforia.engine@9.3.3/Vuforia/Plugins/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/PackageCache/com.ptc.vuforia.engine@9.3.3/Vuforia/Plugins/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Vuforia.UnityExtensions">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/ARProject_M1/Library/PackageCache/com.ptc.vuforia.engine@9.3.3/Vuforia/Plugins/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/PackageCache/com.ptc.vuforia.engine@9.3.3/Vuforia/Plugins/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/ARProject_M1/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -633,16 +633,16 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/ARProject_M1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/ARProject_M1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/ARProject_M1/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/ARProject_M1/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

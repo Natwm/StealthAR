@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6730138520120306992}
   - component: {fileID: -3081188355517635147}
   - component: {fileID: 5534999818855812884}
+  - component: {fileID: -609789347045042316}
   m_Layer: 10
   m_Name: Pickable_Cube
   m_TagString: Cube
@@ -130,3 +131,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &-609789347045042316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730138520120306993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f8de0a32ec6ca4eac6e66505310c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RotattionInZValue: 180
+  m_MoveToPlayerDuration: 1
+  m_RotationDuration: 1
+  m_ScaleToZeroDuration: 0.7

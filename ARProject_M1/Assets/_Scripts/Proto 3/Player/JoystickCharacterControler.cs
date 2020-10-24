@@ -233,8 +233,8 @@ public class JoystickCharacterControler : MonoBehaviour
                 break;
         }
         
-        interactGO.GetComponent<PickableObject>().PlayAnimation(transform.position);
-        Destroy(interactGO,1f);
+        interactGO.GetComponent<PickableObject>().PickUp(transform.position);
+        //Destroy(interactGO,1f);
     }
 
     #region Physics
