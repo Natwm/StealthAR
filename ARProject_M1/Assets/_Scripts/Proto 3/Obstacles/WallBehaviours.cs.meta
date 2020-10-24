@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cea7c716bcd56534093fae3d9dc792c4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_GameManager: {instanceID: 0}
+  - cantPlantMat: {fileID: 2100000, guid: eb6e10dff9f514759be66f421e410678, type: 2}
+  - canPlantMat: {fileID: 2100000, guid: c75993c9929c749ddb5e2cd9d56ad68a, type: 2}
+  - normalMat: {fileID: 2100000, guid: 0b918cc8acf0941e8a99fa42f7586b7c, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

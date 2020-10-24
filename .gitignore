@@ -90,7 +90,6 @@ fmod_editor.log
 
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 .collabignore
-*.meta
 ARProject_M1/Assets/StreamingAssets/Vuforia/Test.*
 ARProject_M1/Assets/StreamingAssets/Vuforia/Test_OT.*
 ARProject_M1/Assets/StreamingAssets/Vuforia/VuforiaMars*
