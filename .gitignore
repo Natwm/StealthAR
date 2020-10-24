@@ -43,6 +43,7 @@ obj/
 *.booproj
 /*.vs
 
+
 # Common IntelliJ Platform excludes
 
 # User specific
@@ -88,3 +89,26 @@ ehthumbs.db
 fmod_editor.log
 
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+.collabignore
+*.meta
+ARProject_M1/Assets/StreamingAssets/Vuforia/Test.*
+ARProject_M1/Assets/StreamingAssets/Vuforia/Test_OT.*
+ARProject_M1/Assets/StreamingAssets/Vuforia/VuforiaMars*
+ARProject_M1/Assets/Joystick Pack/Documentaion.pdf
+ARProject_M1/Assets/Editor/Vuforia/TargetsetData/Test/1c1e6b2486c042a1b96d2ddf9410e769_preview.jpg
+ARProject_M1/Assets/Editor/Vuforia/TargetsetData/Test/300d8d660ac84994a902de04c3be6a31_preview.jpg
+ARProject_M1/Assets/Editor/Vuforia/TargetsetData/Test/71c9a3b348d74665be19f5c3e32b9faf_preview.jpg
+ARProject_M1/Assets/Editor/Vuforia/TargetsetData/Test/c2fd886794f1442dbdbdbe9f2a2d3ed6_preview.jpg
+ARProject_M1/Assets/Editor/Vuforia/TargetsetData/Test/eab1b3c0f0b84a018bf19b59f673cbe7_preview.jpg
+ARProject_M1/Assets/Editor/Vuforia/TargetsetData/Test/f9f2057bc2c94e6382fce9b9cacb247d_preview.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaEmulator/emulator_ground_plane_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Astronaut_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Drone_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Fissure_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Back_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Bottom_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Front_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Left_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Right_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Top_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Oxygen_scaled.jpg
