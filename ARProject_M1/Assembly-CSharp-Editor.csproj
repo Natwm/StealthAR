@@ -694,6 +694,9 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
