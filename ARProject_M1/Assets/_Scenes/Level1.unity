@@ -933,10 +933,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 319072953, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
-      propertyPath: m_Name
-      value: PlatformImage
-      objectReference: {fileID: 0}
     - target: {fileID: 319072954, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -952,15 +948,6 @@ PrefabInstance:
     - target: {fileID: 319072954, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 319072955, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: baa8b3b0405546e4fb792894e34c31df,
-        type: 3}
-    - target: {fileID: 1593247803, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
-      propertyPath: m_Name
-      value: WallImage
       objectReference: {fileID: 0}
     - target: {fileID: 1593247804, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
       propertyPath: m_AnchorMin.y
@@ -978,15 +965,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1593247805, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b31d46b21d21f7f4bb0d4326728b5bab,
-        type: 3}
-    - target: {fileID: 1607985441, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
-      propertyPath: m_Name
-      value: BoxImage
-      objectReference: {fileID: 0}
     - target: {fileID: 1607985442, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1003,11 +981,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1607985443, guid: a831fec458aa66e4d8fcc86ba479dc06, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 11bfcdcb542827944b0f2f32dac01ef6,
-        type: 3}
     - target: {fileID: 3645541330150028022, guid: a831fec458aa66e4d8fcc86ba479dc06,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
