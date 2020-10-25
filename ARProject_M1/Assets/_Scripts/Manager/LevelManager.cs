@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndBehaviours : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
-
     private FadeScreen fader;
     // Start is called before the first frame update
     void Start()
@@ -13,21 +12,22 @@ public class EndBehaviours : MonoBehaviour
         fader = FindObjectOfType<FadeScreen>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ReloadLevel()
     {
-        
+        StartCoroutine("ReloadScene");
     }
 
-    private IEnumerator LoadSceneWithNameCore()
+    public IEnumerator ReloadScene()
     {
+        //menuManager.FadOutMusic();
         yield return fader.FadOutCore();
         LevelLoader.LoadLevelByIndex(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public IEnumerator LoadNextScene()
     {
-        if(other.CompareTag("Player"))
-            StartCoroutine(LoadSceneWithNameCore());
+        //menuManager.FadOutMusic();
+        yield return fader.FadOutCore();
+        LevelLoader.LoadLevelByIndex(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

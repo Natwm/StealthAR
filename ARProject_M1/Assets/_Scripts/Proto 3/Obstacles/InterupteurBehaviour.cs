@@ -3,35 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class InterupteurBehaviour : MonoBehaviour
+public class InterupteurBehaviour : ActionableObjects
 {
-    [SerializeField] private GameObject[] m_UpWall;
-    [SerializeField] private GameObject[] m_DownWall;
+    
 
-    public void Interaction()
+    #region Interface
+    public virtual void Interaction()
     {
         MoveWall();
+        ActionPlatform();
     }
 
-    void MoveWall()
-    {
-        MoveDown();
-        MoveUp();
-    }
-
-    void MoveUp()
-    {
-        foreach (GameObject wall in m_UpWall)
-        {
-            wall.GetComponent<DoorBehaviours>().OpenDoor();
-        }
-    }
-
-    void MoveDown()
-    {
-        foreach (GameObject wall in m_DownWall)
-        {
-            wall.GetComponent<DoorBehaviours>().CloseDoor();
-        }
-    }
+    #endregion
 }

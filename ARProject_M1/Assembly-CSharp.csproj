@@ -83,6 +83,7 @@
     <Compile Include="Assets\_Scripts\Level\LevelSelectionScreen.cs" />
     <Compile Include="Assets\_Scripts\Manager\CanvasManager.cs" />
     <Compile Include="Assets\_Scripts\Manager\GameManager.cs" />
+    <Compile Include="Assets\_Scripts\Manager\LevelManager.cs" />
     <Compile Include="Assets\_Scripts\Proto 1\ARPlayerBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 1\Bullets\LazerBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 1\Spawner\SpawnerBehaviours.cs" />
@@ -90,14 +91,21 @@
     <Compile Include="Assets\_Scripts\Proto 2\DrawRoads.cs" />
     <Compile Include="Assets\_Scripts\Proto 2\RoadBehaviour.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\FieldOfView.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\Interfaces\IActionableObjects.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\Interfaces\IPickable.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Obstacles\BulletBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Obstacles\DoorBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Obstacles\EndBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Obstacles\InterupteurBehaviour.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Obstacles\MovingPlatform.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\Obstacles\PressurePlateBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Obstacles\TurretBehaviours.cs" />
-    <Compile Include="Assets\_Scripts\Proto 3\Obstacles\WallBehaviours.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\PickableObject\ActionableObjects.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\PickableObject\BoxBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\PickableObject\PickableObject.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\PickableObject\PlatformBehaviours.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\PickableObject\SpawningObjects.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\PickableObject\WallBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Player\JoystickCharacterControler.cs" />
     <Compile Include="Assets\_Scripts\UI\FadeScreen.cs" />
     <Compile Include="Assets\_Scripts\UI\LevelButton.cs" />
@@ -704,6 +712,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
@@ -712,9 +723,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

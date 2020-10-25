@@ -19,7 +19,7 @@ public class BulletBehaviours : MonoBehaviour
         }
         else if (other.CompareTag("PlayerWall"))
         {
-            other.gameObject.GetComponent<WallBehaviours>().GetDammage(1);
+            other.gameObject.GetComponent<WallBehaviours>().Damage(1);
             Destroy(gameObject);
         }
     }

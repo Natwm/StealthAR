@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6730138520120306994}
   - component: {fileID: 6730138520120306995}
   - component: {fileID: 6730138520120306992}
-  - component: {fileID: -3081188355517635147}
   - component: {fileID: 5534999818855812884}
   - component: {fileID: -5098221613736328981}
+  - component: {fileID: -5651611027265582590}
   m_Layer: 10
   m_Name: Pickable_Platform
   m_TagString: Platform
@@ -96,25 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-3081188355517635147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6730138520120306993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea7c716bcd56534093fae3d9dc792c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_GameManager: {fileID: 0}
-  m_LifePoint: 5
-  speed: 1
-  angle: 1
-  canPlant: 1
-  cantPlantMat: {fileID: 2100000, guid: eb6e10dff9f514759be66f421e410678, type: 2}
-  canPlantMat: {fileID: 2100000, guid: 0b918cc8acf0941e8a99fa42f7586b7c, type: 2}
 --- !u!54 &5534999818855812884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,7 +124,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f8de0a32ec6ca4eac6e66505310c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
+  scale: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
   m_RotattionInZValue: 180
   m_MoveToPlayerDuration: 1
   m_RotationDuration: 1
   m_ScaleToZeroDuration: 0.7
+  timeBeforeRespawn: 1
+  RespawnTime: 1
+--- !u!114 &-5651611027265582590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730138520120306993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117b7bba65b4ba54f82648d0c415f5f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GameManager: {fileID: 0}
+  m_LifePoint: 5
+  speed: 1
+  angle: 1
+  canPlant: 1
+  cantPlantMat: {fileID: 2100000, guid: eb6e10dff9f514759be66f421e410678, type: 2}
+  canPlantMat: {fileID: 2100000, guid: c75993c9929c749ddb5e2cd9d56ad68a, type: 2}

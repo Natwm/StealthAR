@@ -8,6 +8,7 @@ public class DoorBehaviours : MonoBehaviour
     private enum doorState
     {
         OPEN,
+        WAIT,
         CLOSE
     }
 
@@ -27,19 +28,21 @@ public class DoorBehaviours : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        /*if(m_State == doorState.WAIT)
         {
-            OpenDoor();
-        }
+            m_State = transform.position == openPos || transform.position == closePos ? doorState.CLOSE : doorState.WAIT;
+        }*/
     }
 
     public void OpenDoor()
     {
+        m_State = doorState.OPEN;
         transform.DOMove(openPos, movementSpeed, false);
     }
 
     public void CloseDoor ()
     {
+        m_State = doorState.CLOSE;
         transform.DOMove(closePos, movementSpeed, false);
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - PlayerWall
   - Platform
   - Cube
+  - PlatformSpawn
   layers:
   - Default
   - TransparentFX

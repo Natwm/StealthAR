@@ -10,6 +10,7 @@ public class CanvasManager : MonoBehaviour
     [Header("Panel")]
     [SerializeField] private GameObject m_SettingsPanel;
     [SerializeField] private GameObject m_ExitPanel;
+    [SerializeField] private GameObject m_GameOverPanel;
 
     [Header("Wall Buttons")]
     [SerializeField] private Button m_UseButton;
@@ -59,7 +60,7 @@ public class CanvasManager : MonoBehaviour
         m_ValidationButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnWall);
     }
 
-    public void SetNewWall(GameObject wall)
+    public void SetNewObject(IPickable<int> spawningObject)
     {
         m_UseButton.gameObject.SetActive(false);
         m_ValidationButton.gameObject.SetActive(true);
@@ -68,7 +69,7 @@ public class CanvasManager : MonoBehaviour
         m_ValidationButton.onClick.RemoveAllListeners(); //= null;
         //m_ButtonPanel.SetActive(true);
         m_ValidationButton.transform.GetChild(0).GetComponent<TMP_Text>().text = m_ValidSpawnWallText;
-        m_ValidationButton.onClick.AddListener(wall.GetComponent<WallBehaviours>().ValidationSpawnWall);
+        m_ValidationButton.onClick.AddListener(spawningObject.ValidationSpawn);
     }
 
     public void DeleteNewWall()
@@ -87,6 +88,11 @@ public class CanvasManager : MonoBehaviour
         }else
             m_SettingsPanel.SetActive(true);
         //pauser le jeu
+    }
+
+    public void ShowGameOverScreen()
+    {
+        m_GameOverPanel.SetActive(true);
     }
 
     public void IncreaseAmoutOfObject(GameObject pickableObject, int amount)

@@ -76,10 +76,6 @@ public class JoystickCharacterControler : MonoBehaviour
 
     void Start()
     {
-        /*m_CollectSequence.Append(transform.DOMoveY(transform.position.y + 1, 1));
-        m_CollectSequence.Append(transform.DORotate(new Vector3(0, 180, 0), 1));
-        m_CollectSequence.Append(transform.DOScale(Vector3.zero, 1));*/
-
         cam = Camera.main;
         //joystick = FindObjectOfType<Joystick>();
         characterController = FindObjectOfType<CharacterController>();
@@ -101,7 +97,7 @@ public class JoystickCharacterControler : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SpawnWall(); 
+            SpawnPlatform(); 
         }
 
     }
@@ -112,6 +108,7 @@ public class JoystickCharacterControler : MonoBehaviour
 
     }
 
+    #region Player Actions
     void TpsMove()
     {
         float moveVertical = joystick.Vertical;
@@ -149,53 +146,6 @@ public class JoystickCharacterControler : MonoBehaviour
         
     }
 
-    public void SpawnWall()
-    {
-        if(m_AmountOfWall > 0)
-        {
-            m_AmountOfWall--;
-
-            GameObject playerObject = Instantiate(m_WallGO, Wallspawner.position, transform.rotation/*Quaternion.identity*/);
-            playerObject.transform.parent = Wallspawner;
-            playerObject.GetComponent<BoxCollider>().isTrigger = true;
-            m_GameManger.NewWallAppear(playerObject);
-
-            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfWall);
-        }
-        
-    }
-
-    public void SpawnCube()
-    {
-        if(m_AmountOfCube > 0)
-        {
-            m_AmountOfCube--;
-
-            GameObject playerObject = Instantiate(m_CubeGO, Wallspawner.position, Quaternion.identity);
-            playerObject.transform.parent = Wallspawner;
-            playerObject.GetComponent<BoxCollider>().isTrigger = true;
-            m_GameManger.NewWallAppear(playerObject);
-
-            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfWall);
-        }
-        
-    }
-
-    public void SpawnPlatform()
-    {
-        if (m_AmountOfPlatform > 0)
-        {
-            m_AmountOfPlatform--;
-
-            GameObject playerObject = Instantiate(m_PlatformGO, Wallspawner.position, Quaternion.identity);
-            playerObject.transform.parent = Wallspawner;
-            playerObject.GetComponent<BoxCollider>().isTrigger = true;
-            m_GameManger.NewWallAppear(playerObject);
-
-            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfWall);
-        }
-
-    }
 
     public void Interaction()
     {
@@ -205,7 +155,7 @@ public class JoystickCharacterControler : MonoBehaviour
             Collect();
     }
 
-    void Collect ()
+    void Collect()
     {
         Debug.Log(interactGO.name);
         switch (interactGO.tag)
@@ -232,10 +182,63 @@ public class JoystickCharacterControler : MonoBehaviour
                 return;
                 break;
         }
-        
+
         interactGO.GetComponent<PickableObject>().PickUp(transform.position);
         //Destroy(interactGO,1f);
     }
+    #endregion
+
+    #region SpawnObjects
+    public void SpawnWall()
+    {
+        if(m_AmountOfWall > 0)
+        {
+            m_AmountOfWall--;
+
+            GameObject playerObject = Instantiate(m_WallGO, Wallspawner.position, transform.rotation/*Quaternion.identity*/);
+            playerObject.transform.parent = Wallspawner;
+            playerObject.GetComponent<BoxCollider>().isTrigger = true;
+            m_GameManger.NewObjectAppear(playerObject.GetComponent<WallBehaviours>());
+
+            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfWall);
+        }
+        
+    }
+
+    public void SpawnCube()
+    {
+        if(m_AmountOfCube > 0)
+        {
+            m_AmountOfCube--;
+
+            GameObject playerObject = Instantiate(m_CubeGO, Wallspawner.position, Quaternion.identity);
+            playerObject.transform.parent = Wallspawner;
+            playerObject.GetComponent<BoxCollider>().isTrigger = true;
+            m_GameManger.NewObjectAppear(playerObject.GetComponent<BoxBehaviours>());
+
+            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfWall);
+        }
+        
+    }
+
+    public void SpawnPlatform()
+    {
+        if (m_AmountOfPlatform > 0)
+        {
+            m_AmountOfPlatform--;
+
+            GameObject playerObject = Instantiate(m_PlatformGO, Wallspawner.position, Quaternion.identity);
+            playerObject.transform.parent = Wallspawner;
+            playerObject.GetComponent<BoxCollider>().isTrigger = true;
+            m_GameManger.NewObjectAppear(playerObject.GetComponent<PlatformBehaviours>());
+
+            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfWall);
+        }
+
+    }
+    #endregion
+
+    
 
     #region Physics
     private void physicsCheck()
@@ -262,6 +265,8 @@ public class JoystickCharacterControler : MonoBehaviour
     }
     #endregion
 
+    #region GETTER && SETTER
+
     public void GetDammage(int damage)
     {
         m_LifePoint -= damage;
@@ -271,10 +276,13 @@ public class JoystickCharacterControler : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #endregion
 
+    #region Gizmo
     private void OnDrawGizmos()
     {
 
         Gizmos.DrawWireSphere(interactTransform.position, castRadius);
     }
+    #endregion
 }

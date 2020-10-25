@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private CanvasManager canvas;
+    [SerializeField] private LevelManager m_levelManager;
     [SerializeField] private Transform playerCheckPoint;
     [SerializeField] private GameObject playerGO;
 
@@ -12,16 +13,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         canvas = FindObjectOfType<CanvasManager>();
+        m_levelManager = GetComponent<LevelManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
- 
-    }
+
 
     public void playerGetKilled() {
-        Instantiate(playerGO, playerCheckPoint.position, Quaternion.identity);
+
+        //Instantiate(playerGO, playerCheckPoint.position, Quaternion.identity);
+        canvas.ShowGameOverScreen();
     }
 
     public void IsJumping( bool isHeGrounded)
@@ -35,9 +35,9 @@ public class GameManager : MonoBehaviour
         canvas.IncreaseAmoutOfObject(pickableObject, amount);
     }
 
-    public void NewWallAppear(GameObject wall)
+    public void NewObjectAppear(IPickable<int> spawningObject)
     {
-        canvas.SetNewWall(wall);
+        canvas.SetNewObject(spawningObject);
     }
 
     public void wallSetUp()
