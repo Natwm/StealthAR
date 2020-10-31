@@ -11,6 +11,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject m_SettingsPanel;
     [SerializeField] private GameObject m_ExitPanel;
     [SerializeField] private GameObject m_GameOverPanel;
+    [SerializeField] private GameObject m_DialoguePanel;
 
     [Header("Wall Buttons")]
     [SerializeField] private Button m_UseButton;
@@ -28,6 +29,9 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private string m_InteractionText = "USE";
     [SerializeField] private string m_SpawnWallText = "SPAWN WALL";
     [SerializeField] private string m_ValidSpawnWallText = "VALID";
+
+    [Header("Text Dialogue")]
+    public TMP_Text dialogueText;
 
     [Space]
     [Header("Inventory Info")]
@@ -55,6 +59,21 @@ public class CanvasManager : MonoBehaviour
         
     }
 
+    #region Dialogues
+    public void UpdateDialogueText(string sentences)
+    {
+        m_DialoguePanel.SetActive(true);
+        dialogueText.text = sentences;
+    }
+
+    public void ClearTextField()
+    {
+        dialogueText.text = "";
+        m_DialoguePanel.SetActive(false);
+    }
+    #endregion
+
+    #region Wall
     public void SpawnObject()
     {
         m_ValidationButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnWall);
@@ -80,6 +99,9 @@ public class CanvasManager : MonoBehaviour
         m_UseButton.transform.GetChild(0).GetComponent<TMP_Text>().text = m_InteractionText;*/
     }
 
+    #endregion
+
+    #region Setting
     public void ShowSetting()
     {
         if (m_SettingsPanel.active)
@@ -89,6 +111,24 @@ public class CanvasManager : MonoBehaviour
             m_SettingsPanel.SetActive(true);
         //pauser le jeu
     }
+
+    public void ShowExitPanel()
+    {
+        m_ExitPanel.SetActive(true);
+    }
+
+    public void DontQuitGame()
+    {
+        m_ExitPanel.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("END OF THE GAME");
+        Application.Quit();
+    }
+
+    #endregion
 
     public void ShowGameOverScreen()
     {
@@ -126,24 +166,9 @@ public class CanvasManager : MonoBehaviour
         m_JumpButton.interactable = isHeGrounded;
     }
 
-    public void ShowExitPanel()
-    {
-        m_ExitPanel.SetActive(true);
-    }
-
     public void UseButton( bool active)
     {
         m_UseButton.interactable = active;
     }
 
-    public void DontQuitGame()
-    {
-        m_ExitPanel.SetActive(false);
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("END OF THE GAME");
-        Application.Quit();
-    }
 }
