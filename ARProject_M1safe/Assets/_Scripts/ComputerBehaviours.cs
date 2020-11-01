@@ -19,6 +19,7 @@ public class ComputerBehaviours : MonoBehaviour, IActionableObjects
     public void Interaction()
     {
         Debug.Log("Interact");
+        Debug.Log(dialogue.sentences[0]);
         m_GameManager.NewDialogue(dialogue);
     }
     #endregion

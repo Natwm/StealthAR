@@ -9,6 +9,7 @@ TagManager:
   - Platform
   - Cube
   - PlatformSpawn
+  - PressurePlaque
   layers:
   - Default
   - TransparentFX

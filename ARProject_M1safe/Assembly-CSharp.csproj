@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A3B46B6C-EDC8-DAD9-0D53-C0C38A711438}</ProjectGuid>
+    <ProjectGuid>{E7A636D5-0FEC-9416-5488-CB3F94D68714}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_9;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;UNITY_ASTC_ONLY_DECOMPRESS;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_9;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -48,7 +48,7 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2019.4.9f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -79,6 +79,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\_Scripts\AR\Letest.cs" />
     <Compile Include="Assets\_Scripts\Camera\CameraFocus.cs" />
+    <Compile Include="Assets\_Scripts\ComputerBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Dialogues\Dialogues.cs" />
     <Compile Include="Assets\_Scripts\Level\LevelLoader.cs" />
     <Compile Include="Assets\_Scripts\Level\LevelSelectionScreen.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\_Scripts\Proto 3\Obstacles\TurretBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\PickableObject\ActionableObjects.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\PickableObject\BoxBehaviours.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\PickableObject\IActionableObject.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\PickableObject\PickableObject.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\PickableObject\PlatformBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\PickableObject\SpawningObjects.cs" />
@@ -125,13 +127,10 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Images.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\StreamingAssets\Vuforia\Test.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\StreamingAssets\Vuforia\Test_OT.xml" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
@@ -161,6 +160,12 @@
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
@@ -313,10 +318,10 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Vuforia.UnityExtensions">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/PackageCache/com.ptc.vuforia.engine@9.3.3/Vuforia/Plugins/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/PackageCache/com.ptc.vuforia.engine@9.3.3/Vuforia/Plugins/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -673,67 +678,67 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="VuforiaScripts">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/VuforiaScripts.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/VuforiaScripts.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="VuforiaEditorScripts">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/VuforiaEditorScripts.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/VuforiaEditorScripts.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetaRSafe/ARProject_M1safe/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{8B3B3798-4113-F559-8DED-0910B95E2F42}</Project>
+      <Project>{729032E4-074F-B7D6-05B9-5D735B2798B4}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="EditorMigrationScripts.csproj">
-      <Project>{41B4B9A2-73E2-192F-DE75-DC530F5F0599}</Project>
+      <Project>{A62886A7-9D2F-CA98-7AD2-727045A2558D}</Project>
       <Name>EditorMigrationScripts</Name>
     </ProjectReference>
   </ItemGroup>
