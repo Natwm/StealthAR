@@ -17,22 +17,32 @@ public class TurretBehaviours : MonoBehaviour
     [Header("Projectile Param")]
     [SerializeField] private float projectileSpeed;
 
+    [SerializeField] private GameObject m_PositionParent;
+
     [Space]
     [Header("Movement Param")]
-    [SerializeField] private List<Transform> m_ListOfPosition;
+    [SerializeField] private List<Vector3> m_ListOfPosition;
+    [SerializeField] private List<Quaternion> m_ListOfRotation;
     [SerializeField] private float m_MovementSpeed;
     public int index = 0;
     [SerializeField] private float stopRotationDuration = 1f;
 
     private FieldOfView m_TurretFOV;
 
-    public bool canTurn;
+    public bool canTurn = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_TurretFOV = transform.GetChild(0).transform.GetChild(0).GetComponent<FieldOfView>();
+        m_ListOfRotation.Clear();
+        m_ListOfPosition.Clear();
 
+        m_TurretFOV = transform.GetChild(0).transform.GetChild(0).GetComponent<FieldOfView>();
+        for (int i = 0; i < m_PositionParent.transform.childCount; i++)
+        {
+            m_ListOfPosition.Add(m_PositionParent.transform.GetChild(i).position);
+            m_ListOfRotation.Add(m_PositionParent.transform.GetChild(i).rotation);
+        }
     }
 
     // Update is called once per frame
@@ -40,15 +50,20 @@ public class TurretBehaviours : MonoBehaviour
     {
         if (canTurn)
         {
-            if (transform.position == m_ListOfPosition[index].position)
+            if (transform.position == m_ListOfPosition[index])
             {
                 TurretRotation(index);
-            }          
-
+            }
             TurretMovement(index);
         }
-            
-        /*if (m_TurretFOV.VisibleGameobject.Count > 0)
+        
+
+        
+    }
+
+    void Shoot()
+    {
+        if (m_TurretFOV.VisibleGameobject.Count > 0)
         {
             GameObject target = GetTarget();
 
@@ -62,10 +77,10 @@ public class TurretBehaviours : MonoBehaviour
             {
                 timeBtwSpawn -= Time.deltaTime;
             }
-        }*/
+        }
     }
 
-    IEnumerator Thetest()
+    IEnumerator WaitUntilRotationDone()
     {
         canTurn = false;
         yield return new WaitForSeconds(stopRotationDuration);
@@ -78,13 +93,13 @@ public class TurretBehaviours : MonoBehaviour
 
     void TurretMovement(int index)
     {
-        transform.position = Vector3.MoveTowards(transform.position, m_ListOfPosition[index].position, m_MovementSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, m_ListOfPosition[index], m_MovementSpeed * Time.deltaTime);
     }
     void TurretRotation(int index)
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, m_ListOfPosition[index].rotation, m_MovementSpeed * Time.deltaTime);
-        if(transform.rotation == m_ListOfPosition[index].rotation)
-            StartCoroutine(Thetest());
+        transform.rotation = Quaternion.Lerp(transform.rotation, m_ListOfRotation[index], m_MovementSpeed * Time.deltaTime);
+        if(transform.rotation == m_ListOfRotation[index])
+            StartCoroutine(WaitUntilRotationDone());
     }
 
     GameObject GetTarget()
