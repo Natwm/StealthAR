@@ -79,7 +79,7 @@ public class CanvasManager : MonoBehaviour
         m_ValidationButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnWall);
     }
 
-    public void SetNewObject(IPickable<int> spawningObject)
+    public void SetNewObject(IPickable spawningObject)
     {
         m_UseButton.gameObject.SetActive(false);
         m_ValidationButton.gameObject.SetActive(true);

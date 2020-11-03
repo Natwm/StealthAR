@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WallBehaviours : SpawningObjects, IPickable<int>
+public class WallBehaviours : SpawningObjects, IPickable
 {
 
     #region MoveWall
@@ -44,21 +44,6 @@ public class WallBehaviours : SpawningObjects, IPickable<int>
             Debug.Log("Can plant the wall");
         }
 
-    }
-
-    public void Damage(int damageTake)
-    {
-        m_LifePoint -= damageTake;
-
-        if (m_LifePoint <= 0)
-        {
-            Kill();
-        }
-    }
-
-    public void Kill()
-    {
-        Destroy(gameObject);
     }
     #endregion
 

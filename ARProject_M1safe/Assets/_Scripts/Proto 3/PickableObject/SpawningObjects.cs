@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawningObjects : MonoBehaviour
+public class SpawningObjects : MonoBehaviour, IDamageable<int>
 {
     [SerializeField] protected GameManager m_GameManager;
 
@@ -27,14 +27,24 @@ public class SpawningObjects : MonoBehaviour
     [SerializeField] protected Material cantPlantMat;
     [SerializeField] protected Material canPlantMat;
 
+   
 
     private void Start()
     {
         m_GameManager = FindObjectOfType<GameManager>();
     }
 
-    private void Update()
+    #region Interface
+    public void Damage(int damageTake)
     {
-        //Material myMat = canPlant ? GetComponent<Renderer>().material = canPlantMat : GetComponent<Renderer>().material = cantPlantMat;
+        m_LifePoint -= damageTake;
+        if (m_LifePoint <= 0)
+            Kill();
     }
+
+    public void Kill()
+    {
+        Destroy(gameObject);
+    }
+    #endregion
 }

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_GameManger: {fileID: 0}
-  turnShmoothTime: 0.1
+  turnShmoothTime: 0.2
   turnShmoothVelocity: 0.1
   m_LifePoint: 3
   characterController: {fileID: 0}

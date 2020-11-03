@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         canvas.IncreaseAmoutOfObject(pickableObject, amount);
     }
 
-    public void NewObjectAppear(IPickable<int> spawningObject)
+    public void NewObjectAppear(IPickable spawningObject)
     {
         canvas.SetNewObject(spawningObject);
     }

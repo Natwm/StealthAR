@@ -95,6 +95,7 @@
     <Compile Include="Assets\_Scripts\Proto 2\RoadBehaviour.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\FieldOfView.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Interfaces\IActionableObjects.cs" />
+    <Compile Include="Assets\_Scripts\Proto 3\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Interfaces\IPickable.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Obstacles\BulletBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Obstacles\DoorBehaviours.cs" />
