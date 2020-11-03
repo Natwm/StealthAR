@@ -15,8 +15,8 @@ public class TurretBehaviours : MonoBehaviour
 
     [Space]
     [Header("Projectile Param")]
+    [SerializeField] private int m_Damage;
     [SerializeField] private float projectileSpeed;
-
     [SerializeField] private GameObject m_PositionParent;
 
     [Space]
@@ -29,6 +29,9 @@ public class TurretBehaviours : MonoBehaviour
 
     private FieldOfView m_TurretFOV;
 
+    private GameObject target;
+    private Vector3 targetPosition;
+
     public bool canTurn = true;
 
     // Start is called before the first frame update
@@ -37,7 +40,7 @@ public class TurretBehaviours : MonoBehaviour
         m_ListOfRotation.Clear();
         m_ListOfPosition.Clear();
 
-        m_TurretFOV = transform.GetChild(0).transform.GetChild(0).GetComponent<FieldOfView>();
+        m_TurretFOV = transform.GetChild(0).GetComponent<FieldOfView>();
         for (int i = 0; i < m_PositionParent.transform.childCount; i++)
         {
             m_ListOfPosition.Add(m_PositionParent.transform.GetChild(i).position);
@@ -50,36 +53,71 @@ public class TurretBehaviours : MonoBehaviour
     {
         if (canTurn)
         {
+            CalculeRotation();
+
             if (transform.position == m_ListOfPosition[index])
             {
                 TurretRotation(index);
             }
             TurretMovement(index);
         }
-        
-
-        
-    }
-
-    void Shoot()
-    {
         if (m_TurretFOV.VisibleGameobject.Count > 0)
         {
-            GameObject target = GetTarget();
-
-            if (timeBtwSpawn <= 0)
-            {
-                GameObject bullet = Instantiate(bulletGO, canonPosition.position, Quaternion.identity);
-                bullet.GetComponent<BulletBehaviours>().Projection(target, projectileSpeed);
-                timeBtwSpawn = startTimeBtwSpawn;
-            }
-            else
-            {
-                timeBtwSpawn -= Time.deltaTime;
-            }
+            canTurn = false;
+            target = GetTarget();
+            targetPosition = target.transform.position;
+            Shoot(target);
         }
+        else if (target!= null)
+        {
+            transform.LookAt(target.transform);
+            MoveToPosition(targetPosition);
+            if (targetPosition == transform.position)
+            {
+                target = null;
+                canTurn = true;
+            }
+
+        }
+
+        /*if (m_TurretFOV.VisibleGameobject.Count > 0)
+        {
+            canTurn = false;
+            target = GetTarget();
+            Shoot(target);
+        }
+        else if (target != null)
+        {
+            MoveToPosition(target.transform.position);
+        }*/
     }
 
+    void Shoot(GameObject target)
+    {
+        if (timeBtwSpawn <= 0)
+        {
+            /*GameObject bullet = Instantiate(bulletGO, canonPosition.position, Quaternion.identity);
+            bullet.GetComponent<BulletBehaviours>().Projection(target, projectileSpeed);*/
+            Debug.Log(target.name);
+            target.GetComponent<IDamageable<int>>().Damage(m_Damage);
+            timeBtwSpawn = startTimeBtwSpawn;
+        }
+        else
+        {
+            timeBtwSpawn -= Time.deltaTime;
+        }
+
+    }
+
+    void CalculeRotation()
+    {
+        Debug.Log("new Rotation");
+        Quaternion TargetRotation = Quaternion.LookRotation(m_ListOfPosition[index] - transform.position);
+        Debug.Log("old " + TargetRotation);
+        //TargetRotation.Set(0, TargetRotation.y, 0, 0);
+        transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, m_MovementSpeed * Time.deltaTime);
+        Debug.Log("new " + TargetRotation);
+    }
     IEnumerator WaitUntilRotationDone()
     {
         canTurn = false;
@@ -87,19 +125,23 @@ public class TurretBehaviours : MonoBehaviour
         index++;
         if (index >= m_ListOfPosition.Count)
             index = 0;
-            
+
         canTurn = true;
+    }
+
+    void MoveToPosition(Vector3 position)
+    {
+        transform.position = Vector3.MoveTowards(transform.position, position, m_MovementSpeed * Time.deltaTime);
     }
 
     void TurretMovement(int index)
     {
-        transform.position = Vector3.MoveTowards(transform.position, m_ListOfPosition[index], m_MovementSpeed * Time.deltaTime);
+        //transform.LookAt(m_ListOfPosition[index]);
+        MoveToPosition(m_ListOfPosition[index]);   
     }
     void TurretRotation(int index)
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, m_ListOfRotation[index], m_MovementSpeed * Time.deltaTime);
-        if(transform.rotation == m_ListOfRotation[index])
-            StartCoroutine(WaitUntilRotationDone());
+        StartCoroutine(WaitUntilRotationDone());
     }
 
     GameObject GetTarget()

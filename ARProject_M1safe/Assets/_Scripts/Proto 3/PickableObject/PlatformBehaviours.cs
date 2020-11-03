@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformBehaviours : SpawningObjects, IPickable<int>
+public class PlatformBehaviours : SpawningObjects, IPickable
 {
     #region Interfaces
     public void ValidationSpawn()
@@ -21,20 +21,6 @@ public class PlatformBehaviours : SpawningObjects, IPickable<int>
 
     }
 
-    public void Damage(int damageTake)
-    {
-        m_LifePoint -= damageTake;
-
-        if (m_LifePoint <= 0)
-        {
-            Kill();
-        }
-    }
-
-    public void Kill()
-    {
-        Destroy(gameObject);
-    }
     #endregion
 
     #region TRIGGER && COLLISION

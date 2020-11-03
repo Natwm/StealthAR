@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IPickable<T>  
+public interface IPickable 
 {
    // void Interaction(Vector3 playerPosition);
     void ValidationSpawn();
-    void Damage(T damageTake);
-    void Kill();
 }
 
 

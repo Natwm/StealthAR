@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class JoystickCharacterControler : MonoBehaviour
+public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 {
     [SerializeField] private GameManager m_GameManger;
     [Space]
@@ -86,12 +86,6 @@ public class JoystickCharacterControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_LifePoint <= 0)
-        {
-            m_GameManger.playerGetKilled();
-            Destroy(gameObject);
-        }
-
         //if(isGrounded)
             TpsMove();
 
@@ -240,7 +234,7 @@ public class JoystickCharacterControler : MonoBehaviour
 
     public void SpawnObject()
     {
-        transform.GetChild(1).GetChild(0).GetComponent<IPickable<int>>().ValidationSpawn();
+        transform.GetChild(1).GetChild(0).GetComponent<IPickable>().ValidationSpawn();
     }
     #endregion
 
@@ -268,6 +262,21 @@ public class JoystickCharacterControler : MonoBehaviour
             velocity.y = -1.5f;
             m_GameManger.IsJumping(isGrounded);
         }
+    }
+    #endregion
+
+    #region Interface
+    public void Damage(int damageTake)
+    {
+        m_LifePoint -= damageTake;
+        if (m_LifePoint <= 0)
+            Kill();
+    }
+
+    public void Kill()
+    {
+        m_GameManger.playerGetKilled();
+        Destroy(gameObject);
     }
     #endregion
 

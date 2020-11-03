@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxBehaviours : SpawningObjects, IPickable<int>
+public class BoxBehaviours : SpawningObjects, IPickable
 {
     #region Interfaces
     public void ValidationSpawn()
@@ -19,21 +19,6 @@ public class BoxBehaviours : SpawningObjects, IPickable<int>
             Debug.Log("Can plant the wall");
         }
 
-    }
-
-    public void Damage(int damageTake)
-    {
-        m_LifePoint -= damageTake;
-
-        if (m_LifePoint <= 0)
-        {
-            Kill();
-        }
-    }
-
-    public void Kill()
-    {
-        Destroy(gameObject);
     }
     #endregion
 
