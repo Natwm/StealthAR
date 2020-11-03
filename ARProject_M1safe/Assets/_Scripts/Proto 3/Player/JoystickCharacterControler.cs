@@ -265,6 +265,8 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     }
     #endregion
 
+
+
     #region Interface
     public void Damage(int damageTake)
     {

@@ -40,12 +40,34 @@ public class MovingPlatform : MonoBehaviour
                     index = 0;
 
             }
-            Debug.Log(m_ListOfPosition.Count);
             transform.position = Vector3.MoveTowards(transform.position, m_ListOfPosition[index], m_MovementSpeed * Time.deltaTime);
         }
     }
 
     #region GETTER && SETTER
     public State MovingState { get => m_MovingState; set => m_MovingState = value; }
+    #endregion
+
+    #region TRIGGER && COLLIDER
+
+   /* private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("enter");
+            collision.gameObject.transform.parent = this.gameObject.transform;
+        }
+            
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (transform.GetChild(1).gameObject.CompareTag("Player"))
+        {
+            Debug.Log("exit");
+            transform.GetChild(1).parent = null;
+        }
+            
+    }*/
     #endregion
 }

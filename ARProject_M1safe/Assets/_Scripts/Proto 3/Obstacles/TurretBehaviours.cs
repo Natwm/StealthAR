@@ -111,12 +111,9 @@ public class TurretBehaviours : MonoBehaviour
 
     void CalculeRotation()
     {
-        Debug.Log("new Rotation");
         Quaternion TargetRotation = Quaternion.LookRotation(m_ListOfPosition[index] - transform.position);
-        Debug.Log("old " + TargetRotation);
-        //TargetRotation.Set(0, TargetRotation.y, 0, 0);
+
         transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, m_MovementSpeed * Time.deltaTime);
-        Debug.Log("new " + TargetRotation);
     }
     IEnumerator WaitUntilRotationDone()
     {
