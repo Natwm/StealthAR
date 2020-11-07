@@ -2,8 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressurePlateBehaviours : ActionableObjects
+public class PressurePlateBehaviours : ActionableObjects, IActionableObjects
 {
+    #region Interface
+    public void Interaction()
+    {
+        MoveWall();
+        ActionPlatform();
+        Debug.Log("interaction");
+    }
+    #endregion
+
     private void OnTriggerEnter(Collider other)
     {
         if ((other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Cube") )/* && (!other.GetComponent<BoxCollider>().isTrigger || other.GetComponent<CharacterController>() != null)*/)

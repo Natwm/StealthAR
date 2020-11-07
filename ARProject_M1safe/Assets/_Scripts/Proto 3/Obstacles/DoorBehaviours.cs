@@ -17,32 +17,45 @@ public class DoorBehaviours : MonoBehaviour
     [SerializeField] private Vector3 openPos;
     [SerializeField] private float movementSpeed;
 
+    [SerializeField] private Animator m_Animator;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        closePos = transform.GetChild(0).position;
-        openPos = transform.GetChild(1).position;
+        m_Animator = transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>();
+        closePos = transform.GetChild(1).transform.GetChild(0).position;
+        openPos = transform.GetChild(1).transform.GetChild(1).position;
+
+        if (m_State == doorState.CLOSE)
+        {
+            m_Animator.SetBool("IsOpen", false);
+            m_Animator.SetBool("IsClose", true);
+        }
+        else if (m_State == doorState.OPEN)
+        {
+            m_Animator.SetBool("IsOpen", true);
+            m_Animator.SetBool("IsClose", false);
+        }
     }
 
     // Update is called once per frame
     void Update()
-    {
-        /*if(m_State == doorState.WAIT)
-        {
-            m_State = transform.position == openPos || transform.position == closePos ? doorState.CLOSE : doorState.WAIT;
-        }*/
-    }
+    {}
 
     public void OpenDoor()
     {
         m_State = doorState.OPEN;
-        transform.DOMove(openPos, movementSpeed, false);
+        m_Animator.SetBool("IsOpen", true);
+        m_Animator.SetBool("IsClose", false);
+        //transform.DOMove(openPos, movementSpeed, false);
     }
 
-    public void CloseDoor ()
+    public void CloseDoor()
     {
+        m_Animator.SetBool("IsOpen", false);
+        m_Animator.SetBool("IsClose", true);
         m_State = doorState.CLOSE;
-        transform.DOMove(closePos, movementSpeed, false);
+        //transform.DOMove(closePos, movementSpeed, false);
     }
 }

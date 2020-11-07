@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class TurretBehaviours : MonoBehaviour
 {
+
+    //[SerializeField] private float stopDurationBeforeFollow = 1f;
+    //[SerializeField] private float startDurationBeforFollow;
+
+    [Header("Animation")]
+    [SerializeField] private Animator m_Animator;
+
+    [Space]
     [Header("Shooting GameObject")]
     [SerializeField] private GameObject bulletGO;
     [SerializeField] private Transform canonPosition;
@@ -41,6 +49,8 @@ public class TurretBehaviours : MonoBehaviour
         m_ListOfPosition.Clear();
 
         m_TurretFOV = transform.GetChild(0).GetComponent<FieldOfView>();
+        m_Animator = transform.GetChild(2).GetComponent<Animator>();
+
         for (int i = 0; i < m_PositionParent.transform.childCount; i++)
         {
             m_ListOfPosition.Add(m_PositionParent.transform.GetChild(i).position);
@@ -53,6 +63,7 @@ public class TurretBehaviours : MonoBehaviour
     {
         if (canTurn)
         {
+            
             CalculeRotation(m_ListOfPosition[index]);
 
             if (transform.position == m_ListOfPosition[index])
@@ -63,6 +74,7 @@ public class TurretBehaviours : MonoBehaviour
         }
         if (m_TurretFOV.VisibleGameobject.Count > 0)
         {
+            m_Animator.SetBool("stop", true);
             canTurn = false;
             target = GetTarget();
             targetPosition = target.transform.position;
@@ -70,6 +82,8 @@ public class TurretBehaviours : MonoBehaviour
         }
         else if (target!= null)
         {
+            m_Animator.SetBool("stop", false);
+            //WaitBeforefollow();
             CalculeRotation(targetPosition);
             MoveToPosition(targetPosition);
             if (targetPosition == transform.position)
@@ -79,7 +93,7 @@ public class TurretBehaviours : MonoBehaviour
             }
 
         }
-
+        m_Animator.SetBool("IsWalking", true);
         /*if (m_TurretFOV.VisibleGameobject.Count > 0)
         {
             canTurn = false;
@@ -92,8 +106,15 @@ public class TurretBehaviours : MonoBehaviour
         }*/
     }
 
+    /*bool WaitBeforefollow()
+    {
+        stopDurationBeforeFollow -= Time.deltaTime;
+        return stopDurationBeforeFollow <= 0.0f ? true : WaitBeforefollow();
+    }*/
+
     void Shoot(GameObject target)
     {
+
         if (timeBtwSpawn <= 0)
         {
             /*GameObject bullet = Instantiate(bulletGO, canonPosition.position, Quaternion.identity);

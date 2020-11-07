@@ -17,14 +17,6 @@ public class ActionableObjects : MonoBehaviour
     [Tooltip(" all platform in this list will stop moving when this object is use")]
     [SerializeField] protected List<GameObject> m_StopActionPlatform;
 
-
-    public void Interaction()
-    {
-        MoveWall();
-        ActionPlatform();
-        Debug.Log("interaction");
-    }
-
     protected void MoveWall()
     {
         OpenDoor();
@@ -48,12 +40,12 @@ public class ActionableObjects : MonoBehaviour
             {
                 wall.GetComponent<DoorBehaviours>().OpenDoor();
             }
-
         }
     }
 
     protected void CloseDoor()
     {
+        if (m_CloseWall.Count > 0)
         {
             Debug.Log("m_CloseWall.Count" + m_CloseWall.Count);
             Debug.Log("Close");

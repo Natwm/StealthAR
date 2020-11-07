@@ -6,7 +6,12 @@ using DG.Tweening;
 public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 {
     [SerializeField] private GameManager m_GameManger;
+
+    [Header("Animator")]
+    [SerializeField] private Animator m_Animator;
+
     [Space]
+    [Header ("turn")]
     [SerializeField] private float turnShmoothTime = 0.1f;
     [SerializeField] private float turnShmoothVelocity;
 
@@ -78,6 +83,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         cam = Camera.main;
         //joystick = FindObjectOfType<Joystick>();
+        m_Animator = transform.GetChild(3).GetComponent<Animator>();
         characterController = FindObjectOfType<CharacterController>();
         groundCheck = transform.GetChild(0);
         m_GameManger = FindObjectOfType<GameManager>();
@@ -105,6 +111,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
         if (mouvement.magnitude >= 0.1f)
         {
+            m_Animator.SetBool("IsWalking", true);
             float targetAngle = Mathf.Atan2(mouvement.x, mouvement.z) * Mathf.Rad2Deg + cam.gameObject.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnShmoothVelocity, turnShmoothTime);
 
@@ -114,8 +121,15 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             characterController.Move(moveDirection.normalized * speedMouvement * Time.deltaTime);
         }
-        
-        
+        else
+        {
+            m_Animator.SetBool("IsWalking", false);
+        }
+
+        if (isGrounded)
+        {
+            //m_Animator.SetBool("IsJumping", false);
+        }
 
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
@@ -128,6 +142,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
             m_GameManger.IsJumping(false);
             velocity.y = Mathf.Sqrt(m_JumpPower * -2f * gravity);
             velocity.y += gravity * Time.deltaTime;
+            m_Animator.SetTrigger("Jump");
             characterController.Move(velocity * Time.deltaTime);
         }
         
