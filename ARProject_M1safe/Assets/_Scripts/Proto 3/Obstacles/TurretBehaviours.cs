@@ -53,7 +53,7 @@ public class TurretBehaviours : MonoBehaviour
     {
         if (canTurn)
         {
-            CalculeRotation();
+            CalculeRotation(m_ListOfPosition[index]);
 
             if (transform.position == m_ListOfPosition[index])
             {
@@ -70,7 +70,7 @@ public class TurretBehaviours : MonoBehaviour
         }
         else if (target!= null)
         {
-            transform.LookAt(target.transform);
+            CalculeRotation(targetPosition);
             MoveToPosition(targetPosition);
             if (targetPosition == transform.position)
             {
@@ -109,9 +109,9 @@ public class TurretBehaviours : MonoBehaviour
 
     }
 
-    void CalculeRotation()
+    void CalculeRotation(Vector3 position)
     {
-        Quaternion TargetRotation = Quaternion.LookRotation(m_ListOfPosition[index] - transform.position);
+        Quaternion TargetRotation = Quaternion.LookRotation(position - transform.position);
 
         transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, m_MovementSpeed * Time.deltaTime);
     }

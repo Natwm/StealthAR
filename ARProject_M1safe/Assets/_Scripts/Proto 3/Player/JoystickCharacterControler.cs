@@ -86,14 +86,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     // Update is called once per frame
     void Update()
     {
-        //if(isGrounded)
             TpsMove();
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SpawnCube(); 
-        }
-
     }
 
     private void FixedUpdate()
