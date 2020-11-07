@@ -7,6 +7,8 @@ public class TurretBehaviours : MonoBehaviour
 
     //[SerializeField] private float stopDurationBeforeFollow = 1f;
     //[SerializeField] private float startDurationBeforFollow;
+    [SerializeField] private bool isStatic = false;
+
 
     [Header("Animation")]
     [SerializeField] private Animator m_Animator;
@@ -45,23 +47,28 @@ public class TurretBehaviours : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         m_ListOfRotation.Clear();
         m_ListOfPosition.Clear();
 
         m_TurretFOV = transform.GetChild(0).GetComponent<FieldOfView>();
         m_Animator = transform.GetChild(2).GetComponent<Animator>();
 
-        for (int i = 0; i < m_PositionParent.transform.childCount; i++)
+        if (!isStatic)
         {
-            m_ListOfPosition.Add(m_PositionParent.transform.GetChild(i).position);
-            m_ListOfRotation.Add(m_PositionParent.transform.GetChild(i).rotation);
+            for (int i = 0; i < m_PositionParent.transform.childCount; i++)
+            {
+                m_ListOfPosition.Add(m_PositionParent.transform.GetChild(i).position);
+                m_ListOfRotation.Add(m_PositionParent.transform.GetChild(i).rotation);
+            }
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canTurn)
+        if (canTurn && !isStatic)
         {
             
             CalculeRotation(m_ListOfPosition[index]);
@@ -80,7 +87,7 @@ public class TurretBehaviours : MonoBehaviour
             targetPosition = target.transform.position;
             Shoot(target);
         }
-        else if (target!= null)
+        else if (target!= null && !isStatic)
         {
             m_Animator.SetBool("stop", false);
             //WaitBeforefollow();
@@ -93,7 +100,8 @@ public class TurretBehaviours : MonoBehaviour
             }
 
         }
-        m_Animator.SetBool("IsWalking", true);
+        if(!isStatic)
+            m_Animator.SetBool("IsWalking", true);
         /*if (m_TurretFOV.VisibleGameobject.Count > 0)
         {
             canTurn = false;
