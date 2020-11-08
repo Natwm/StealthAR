@@ -34,6 +34,7 @@ public class FieldOfView : MonoBehaviour
     [Header("Target")]
     [SerializeField] private LayerMask targetMask;
     [SerializeField] private LayerMask obstacleMask;
+    [SerializeField] private LayerMask shootingObstacleMask;
 
     #endregion
 
@@ -77,7 +78,7 @@ public class FieldOfView : MonoBehaviour
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
-                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask) || Physics.Raycast(transform.position, dirToTarget, dstToTarget, shootingObstacleMask))
                 {
                     visibleTargets.Add(target);
                     visibleGameObject.Add(targetGO);

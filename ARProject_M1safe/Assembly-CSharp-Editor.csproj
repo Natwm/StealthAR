@@ -270,6 +270,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="PackageManagerAssembly">
+      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1safe/Assets/EffectExamples/Editor/PackageManagerAssembly/PackageManagerAssembly.dll</HintPath>
+    </Reference>
     <Reference Include="DOTween">
       <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1safe/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
@@ -281,9 +284,6 @@
     </Reference>
     <Reference Include="Vuforia.UnityExtensions">
       <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1safe/Library/PackageCache/com.ptc.vuforia.engine@9.3.3/Vuforia/Plugins/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="PackageManagerAssembly">
-      <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1safe/Assets/EffectExamples/Editor/PackageManagerAssembly/PackageManagerAssembly.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>N:/GameEngine/Unity Games/0__Cours/__Projet/ProjetAR/ARProject_M1safe/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>

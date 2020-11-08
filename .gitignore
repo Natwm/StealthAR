@@ -90,6 +90,7 @@ fmod_editor.log
 
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 .collabignore
+
 ARProject_M1/Assets/StreamingAssets/Vuforia/Test.*
 ARProject_M1/Assets/StreamingAssets/Vuforia/Test_OT.*
 ARProject_M1/Assets/StreamingAssets/Vuforia/VuforiaMars*
@@ -101,13 +102,5 @@ ARProject_M1/Assets/Editor/Vuforia/TargetsetData/Test/c2fd886794f1442dbdbdbe9f2a
 ARProject_M1/Assets/Editor/Vuforia/TargetsetData/Test/eab1b3c0f0b84a018bf19b59f673cbe7_preview.jpg
 ARProject_M1/Assets/Editor/Vuforia/TargetsetData/Test/f9f2057bc2c94e6382fce9b9cacb247d_preview.jpg
 ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaEmulator/emulator_ground_plane_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Astronaut_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Drone_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Fissure_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Back_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Bottom_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Front_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Left_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Right_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Top_scaled.jpg
-ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Oxygen_scaled.jpg
+ARProject_M1/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/*
+

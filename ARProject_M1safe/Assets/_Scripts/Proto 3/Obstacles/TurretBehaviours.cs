@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class TurretBehaviours : MonoBehaviour
 
     //[SerializeField] private float stopDurationBeforeFollow = 1f;
     //[SerializeField] private float startDurationBeforFollow;
+    [SerializeField] private bool isStatic = false;
+
 
     [Header("Animation")]
     [SerializeField] private Animator m_Animator;
@@ -45,23 +48,31 @@ public class TurretBehaviours : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         m_ListOfRotation.Clear();
         m_ListOfPosition.Clear();
 
         m_TurretFOV = transform.GetChild(0).GetComponent<FieldOfView>();
         m_Animator = transform.GetChild(2).GetComponent<Animator>();
 
-        for (int i = 0; i < m_PositionParent.transform.childCount; i++)
+        if (!isStatic)
         {
-            m_ListOfPosition.Add(m_PositionParent.transform.GetChild(i).position);
-            m_ListOfRotation.Add(m_PositionParent.transform.GetChild(i).rotation);
+            for (int i = 0; i < m_PositionParent.transform.childCount; i++)
+            {
+                m_ListOfPosition.Add(m_PositionParent.transform.GetChild(i).position);
+                m_ListOfRotation.Add(m_PositionParent.transform.GetChild(i).rotation);
+            }
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canTurn)
+        if (!canTurn && m_TurretFOV.VisibleGameobject.Count <= 0)
+            canTurn = true;
+
+        if (canTurn && !isStatic)
         {
             
             CalculeRotation(m_ListOfPosition[index]);
@@ -76,11 +87,20 @@ public class TurretBehaviours : MonoBehaviour
         {
             m_Animator.SetBool("stop", true);
             canTurn = false;
-            target = GetTarget();
-            targetPosition = target.transform.position;
-            Shoot(target);
+            try
+            {
+                target = GetTarget();
+                targetPosition = target.transform.position;
+                Shoot(target);
+            }
+            catch(Exception e)
+            {
+                target = null;
+                canTurn = true;
+            }
+            
         }
-        else if (target!= null)
+        else if (target!= null && !isStatic)
         {
             m_Animator.SetBool("stop", false);
             //WaitBeforefollow();
@@ -93,7 +113,8 @@ public class TurretBehaviours : MonoBehaviour
             }
 
         }
-        m_Animator.SetBool("IsWalking", true);
+        if(!isStatic)
+            m_Animator.SetBool("IsWalking", true);
         /*if (m_TurretFOV.VisibleGameobject.Count > 0)
         {
             canTurn = false;
@@ -165,18 +186,21 @@ public class TurretBehaviours : MonoBehaviour
     GameObject GetTarget()
     {
         GameObject thereIsAPlayer = null;
-        foreach (var item in m_TurretFOV.VisibleGameobject)
-        {
-            if (item.CompareTag("Player"))
+        //if(m_TurretFOV.VisibleGameobject.Count > 0)
+        //{
+            foreach (var item in m_TurretFOV.VisibleGameobject)
             {
-                thereIsAPlayer = item;
-                break;
+                if (item.CompareTag("Player"))
+                {
+                    thereIsAPlayer = item;
+                    break;
+                }
+                else
+                {
+                    thereIsAPlayer = item;
+                }
             }
-            else
-            {
-                thereIsAPlayer = item;
-            }
-        }
+        //}
         return thereIsAPlayer;
     }
 
