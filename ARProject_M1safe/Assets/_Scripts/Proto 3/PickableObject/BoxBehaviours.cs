@@ -28,7 +28,7 @@ public class BoxBehaviours : SpawningObjects, IPickable
         if (!other.CompareTag("PressurePlaque"))
         {
             canPlant = false;
-            GetComponent<Renderer>().material = cantPlantMat;
+            //GetComponent<Renderer>().material = cantPlantMat;
         }
         
     }
@@ -36,7 +36,7 @@ public class BoxBehaviours : SpawningObjects, IPickable
     private void OnTriggerExit(Collider other)
     {
         canPlant = true;
-        GetComponent<Renderer>().material = canPlantMat;
+        //GetComponent<Renderer>().material = canPlantMat;
     }
     #endregion
 }

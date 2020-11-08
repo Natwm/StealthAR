@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -68,6 +69,9 @@ public class TurretBehaviours : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canTurn && m_TurretFOV.VisibleGameobject.Count <= 0)
+            canTurn = true;
+
         if (canTurn && !isStatic)
         {
             
@@ -83,9 +87,18 @@ public class TurretBehaviours : MonoBehaviour
         {
             m_Animator.SetBool("stop", true);
             canTurn = false;
-            target = GetTarget();
-            targetPosition = target.transform.position;
-            Shoot(target);
+            try
+            {
+                target = GetTarget();
+                targetPosition = target.transform.position;
+                Shoot(target);
+            }
+            catch(Exception e)
+            {
+                target = null;
+                canTurn = true;
+            }
+            
         }
         else if (target!= null && !isStatic)
         {
@@ -173,18 +186,21 @@ public class TurretBehaviours : MonoBehaviour
     GameObject GetTarget()
     {
         GameObject thereIsAPlayer = null;
-        foreach (var item in m_TurretFOV.VisibleGameobject)
-        {
-            if (item.CompareTag("Player"))
+        //if(m_TurretFOV.VisibleGameobject.Count > 0)
+        //{
+            foreach (var item in m_TurretFOV.VisibleGameobject)
             {
-                thereIsAPlayer = item;
-                break;
+                if (item.CompareTag("Player"))
+                {
+                    thereIsAPlayer = item;
+                    break;
+                }
+                else
+                {
+                    thereIsAPlayer = item;
+                }
             }
-            else
-            {
-                thereIsAPlayer = item;
-            }
-        }
+        //}
         return thereIsAPlayer;
     }
 

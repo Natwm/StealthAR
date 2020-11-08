@@ -98,7 +98,6 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     private void FixedUpdate()
     {
         physicsCheck();
-
     }
 
     #region Player Actions
@@ -151,7 +150,6 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
     public void Interaction()
     {
-        
         if (interactGO.GetComponent<IActionableObjects>() != null)
             interactGO.GetComponent<IActionableObjects>().Interaction();
         else
@@ -219,7 +217,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
             playerObject.GetComponent<BoxCollider>().isTrigger = true;
             m_GameManger.NewObjectAppear(playerObject.GetComponent<BoxBehaviours>());
 
-            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfWall);
+            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfCube);
         }
         
     }
@@ -235,7 +233,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
             playerObject.GetComponent<BoxCollider>().isTrigger = true;
             m_GameManger.NewObjectAppear(playerObject.GetComponent<PlatformBehaviours>());
 
-            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfWall);
+            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfPlatform);
         }
 
     }

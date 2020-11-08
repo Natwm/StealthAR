@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.6461449, y: 1, z: 2.0210679}
+  m_Center: {x: 0.0037640776, y: 0, z: -0.00081956387}
 --- !u!54 &5534999818855812884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f8de0a32ec6ca4eac6e66505310c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canRespawn: 0
   position: {x: 0, y: 0, z: 0}
   scale: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
@@ -235,7 +236,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: box
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3817944448365816804, guid: 7a6ac3b0f202e8c4c8d07b29ea69450f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7a6ac3b0f202e8c4c8d07b29ea69450f, type: 3}
 --- !u!4 &534380066733859279 stripped
 Transform:

@@ -10,7 +10,11 @@ public class InterupteurBehaviour : ActionableObjects, IActionableObjects
     public virtual void ShowAction()
     {
         Debug.Log("change couleur");
-        m_Voyant.GetComponent<Renderer>().material.color = Color.green;
+        if(m_Voyant.GetComponent<Renderer>().material.color == Color.green)
+        {
+            m_Voyant.GetComponent<Renderer>().material.color = Color.red;
+        }else
+            m_Voyant.GetComponent<Renderer>().material.color = Color.green;
     }
 
     #region Interface

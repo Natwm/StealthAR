@@ -5,6 +5,8 @@ using DG.Tweening;
 
 public class PickableObject : MonoBehaviour
 {
+    [SerializeField] private bool canRespawn;
+
     [Header("Init")]
     [SerializeField] private Vector3 position;
     [SerializeField] private Vector3 scale;
@@ -56,10 +58,12 @@ public class PickableObject : MonoBehaviour
     private IEnumerator DisableObject()
     {
         yield return new WaitForSeconds(1f);
-        Debug.Log("lala");
+        if (!canRespawn)
+            Destroy(gameObject);
         isPick = true;
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
+        transform.GetChild(0).gameObject.SetActive(false);
         transform.position = position;
         transform.localScale = scale;
         transform.rotation = rotation;
@@ -70,7 +74,8 @@ public class PickableObject : MonoBehaviour
         isPick = false;
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<BoxCollider>().isTrigger = false;
-        GetComponent<MeshRenderer>().enabled = true;
+        transform.GetChild(0).gameObject.SetActive(true);
+        //GetComponent<MeshRenderer>().enabled = true;
     }
 
     public void PlayAnimation(Vector3 playerPosition)
