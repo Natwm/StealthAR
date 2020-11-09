@@ -22,9 +22,9 @@ public class MovingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < transform.GetChild(0).childCount; i++)
+        for (int i = 0; i < transform.GetChild(1).childCount; i++)
         {
-            m_ListOfPosition.Add(transform.GetChild(0).GetChild(i).transform.position);
+            m_ListOfPosition.Add(transform.GetChild(1).GetChild(i).transform.position);
         }
     }
 
