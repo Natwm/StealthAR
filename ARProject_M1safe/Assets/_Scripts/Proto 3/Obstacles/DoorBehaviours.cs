@@ -19,10 +19,13 @@ public class DoorBehaviours : MonoBehaviour
 
     [SerializeField] private Animator m_Animator;
 
+    [SerializeField] private BoxCollider doorCollider;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        doorCollider = transform.GetChild(0).GetComponent<BoxCollider>();
         m_Animator = transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>();
         closePos = transform.GetChild(1).transform.GetChild(0).position;
         openPos = transform.GetChild(1).transform.GetChild(1).position;
@@ -48,6 +51,9 @@ public class DoorBehaviours : MonoBehaviour
         m_State = doorState.OPEN;
         m_Animator.SetBool("IsOpen", true);
         m_Animator.SetBool("IsClose", false);
+
+        doorCollider.enabled = false;
+        
         //transform.DOMove(openPos, movementSpeed, false);
     }
 
@@ -56,6 +62,9 @@ public class DoorBehaviours : MonoBehaviour
         m_Animator.SetBool("IsOpen", false);
         m_Animator.SetBool("IsClose", true);
         m_State = doorState.CLOSE;
+
+        doorCollider.enabled = true;
+
         //transform.DOMove(closePos, movementSpeed, false);
     }
 }

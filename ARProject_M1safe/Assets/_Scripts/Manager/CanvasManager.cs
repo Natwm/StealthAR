@@ -46,9 +46,16 @@ public class CanvasManager : MonoBehaviour
         m_AmountOfWall.text = "0";
         m_AmountOfPlatform.text = "0";
 
+        m_JumpButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Jump);
+
         if (m_SettingsPanel.active)
         {
             m_SettingsPanel.SetActive(false);
+        }
+
+        if (m_GameOverPanel.active)
+        {
+            m_GameOverPanel.SetActive(false);
         }
         //
     }

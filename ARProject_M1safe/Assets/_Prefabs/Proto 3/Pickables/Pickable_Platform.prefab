@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f8de0a32ec6ca4eac6e66505310c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canRespawn: 1
+  canRespawn: 0
   position: {x: 0, y: 0, z: 0}
   scale: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
