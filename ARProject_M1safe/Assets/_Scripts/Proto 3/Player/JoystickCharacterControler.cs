@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 {
-    [SerializeField] private GameManager m_GameManger;
+    [SerializeField] private GameManager m_GameManager;
 
     [Header("Animator")]
     [SerializeField] private Animator m_Animator;
@@ -76,6 +76,14 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     [SerializeField] LayerMask interactLayer;
 
 
+    [Space]
+    [Header("Audio")]
+    [SerializeField] AudioSource m_AudioSource;
+    [SerializeField] AudioClip PlayerMovement;
+    [SerializeField] AudioClip PlayerSpawn;
+    [SerializeField] AudioClip PlayerPickUp;
+    [SerializeField] AudioClip PlayerCreateObject; 
+    [SerializeField] AudioClip PlayerCreateObjectCant;
 
     //Sequence m_CollectSequence = DOTween.Sequence();
 
@@ -86,7 +94,8 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
         m_Animator = transform.GetChild(3).GetComponent<Animator>();
         characterController = FindObjectOfType<CharacterController>();
         groundCheck = transform.GetChild(0);
-        m_GameManger = FindObjectOfType<GameManager>();
+        m_GameManager = FindObjectOfType<GameManager>();
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -100,6 +109,18 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
         physicsCheck();
     }
 
+    AudioClip SetSound(Sound.m_SoundName name)
+    {
+        Sound mySound = m_GameManager.GetSound(name);
+
+        m_AudioSource.clip = mySound.Clip;
+
+        m_AudioSource.volume = mySound.Volume;
+        m_AudioSource.pitch = mySound.Pitch;
+
+        return m_AudioSource.clip;
+    }
+
     #region Player Actions
     void TpsMove()
     {
@@ -107,9 +128,14 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
         float moveHorizontal = joystick.Horizontal;
 
         Vector3 mouvement = new Vector3(moveHorizontal, 0, moveVertical).normalized;//(transform.right * moveHorizontal + transform.forward * moveVertical) * speedMouvement;
-
+        
         if (mouvement.magnitude >= 0.1f)
         {
+            //m_GameManger.PlaySound(Sound.m_SoundName.PlayerMovement);
+            
+            //m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerMovement));
+            
+            
             m_Animator.SetBool("IsWalking", true);
             float targetAngle = Mathf.Atan2(mouvement.x, mouvement.z) * Mathf.Rad2Deg + cam.gameObject.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnShmoothVelocity, turnShmoothTime);
@@ -138,7 +164,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         if (isGrounded)
         {
-            m_GameManger.IsJumping(false);
+            m_GameManager.IsJumping(false);
             velocity.y = Mathf.Sqrt(m_JumpPower * -2f * gravity);
             velocity.y += gravity * Time.deltaTime;
             m_Animator.SetTrigger("Jump");
@@ -158,25 +184,26 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
     void Collect()
     {
+        m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerPickUp));
         Debug.Log(interactGO.name);
         switch (interactGO.tag)
         {
             case "PlayerWall":
                 Debug.Log("PlayerWall");
                 m_AmountOfWall++;
-                m_GameManger.PlayerPickAnObject(interactGO, m_AmountOfWall);
+                m_GameManager.PlayerPickAnObject(interactGO, m_AmountOfWall);
                 break;
 
             case "Platform":
                 Debug.Log("Platform");
                 m_AmountOfPlatform++;
-                m_GameManger.PlayerPickAnObject(interactGO, m_AmountOfPlatform);
+                m_GameManager.PlayerPickAnObject(interactGO, m_AmountOfPlatform);
                 break;
 
             case "Cube":
                 Debug.Log("Cube");
                 m_AmountOfCube++;
-                m_GameManger.PlayerPickAnObject(interactGO, m_AmountOfCube);
+                m_GameManager.PlayerPickAnObject(interactGO, m_AmountOfCube);
                 break;
 
             default:
@@ -194,14 +221,15 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         if(m_AmountOfWall > 0)
         {
+            m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerCreateObject));
             m_AmountOfWall--;
 
             GameObject playerObject = Instantiate(m_WallGO, Wallspawner.position, transform.rotation/*Quaternion.identity*/);
             playerObject.transform.parent = Wallspawner;
             playerObject.GetComponent<BoxCollider>().isTrigger = true;
-            m_GameManger.NewObjectAppear(playerObject.GetComponent<WallBehaviours>());
+            m_GameManager.NewObjectAppear(playerObject.GetComponent<WallBehaviours>());
 
-            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfWall);
+            m_GameManager.PlayerPickAnObject(playerObject, m_AmountOfWall);
         }
         
     }
@@ -210,14 +238,15 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         if(m_AmountOfCube > 0)
         {
+            m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerCreateObject));
             m_AmountOfCube--;
 
             GameObject playerObject = Instantiate(m_CubeGO, Wallspawner.position, Quaternion.identity);
             playerObject.transform.parent = Wallspawner;
             playerObject.GetComponent<BoxCollider>().isTrigger = true;
-            m_GameManger.NewObjectAppear(playerObject.GetComponent<BoxBehaviours>());
+            m_GameManager.NewObjectAppear(playerObject.GetComponent<BoxBehaviours>());
 
-            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfCube);
+            m_GameManager.PlayerPickAnObject(playerObject, m_AmountOfCube);
         }
         
     }
@@ -226,14 +255,15 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         if (m_AmountOfPlatform > 0)
         {
+            m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerCreateObject));
             m_AmountOfPlatform--;
 
             GameObject playerObject = Instantiate(m_PlatformGO, Wallspawner.position, Quaternion.identity);
             playerObject.transform.parent = Wallspawner;
             playerObject.GetComponent<BoxCollider>().isTrigger = true;
-            m_GameManger.NewObjectAppear(playerObject.GetComponent<PlatformBehaviours>());
+            m_GameManager.NewObjectAppear(playerObject.GetComponent<PlatformBehaviours>());
 
-            m_GameManger.PlayerPickAnObject(playerObject, m_AmountOfPlatform);
+            m_GameManager.PlayerPickAnObject(playerObject, m_AmountOfPlatform);
         }
 
     }
@@ -253,12 +283,12 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
         if(listOfInteract.Length != 0)
         {
             interactGO = listOfInteract[0].gameObject;
-            m_GameManger.CanInteract(true);
+            m_GameManager.CanInteract(true);
         }
         else
         {
             interactGO = null;
-            m_GameManger.CanInteract(false);
+            m_GameManager.CanInteract(false);
         }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -266,7 +296,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -1.5f;
-            m_GameManger.IsJumping(isGrounded);
+            m_GameManager.IsJumping(isGrounded);
         }
     }
     #endregion
@@ -283,7 +313,8 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
     public void Kill()
     {
-        m_GameManger.playerGetKilled();
+        m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerDied));
+        m_GameManager.playerGetKilled();
         Destroy(gameObject);
     }
     #endregion

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CanvasManager canvas;
     [SerializeField] private LevelManager m_levelManager;
     [SerializeField] private DialogueManager m_DialogueManager;
+    [SerializeField] private SoundManager m_SoundManager;
     [SerializeField] private Transform playerCheckPoint;
     [SerializeField] private GameObject playerGO;
 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
         canvas = FindObjectOfType<CanvasManager>();
         m_levelManager = GetComponent<LevelManager>();
         m_DialogueManager = FindObjectOfType<DialogueManager>();
+        m_SoundManager = FindObjectOfType<SoundManager>();
     }
 
     public void NewDialogue(Dialogues dialogue)
@@ -53,6 +55,21 @@ public class GameManager : MonoBehaviour
     public void CanInteract(bool can)
     {
         canvas.UseButton(can);
+    }
+
+    public static void PlaySoundStatic(Sound.m_SoundName name)
+    {
+        FindObjectOfType<SoundManager>().PlaySound(name);
+    }
+
+    public Sound GetSound(Sound.m_SoundName name)
+    {
+        return m_SoundManager.GetSound(name);
+    }
+
+    public void PlaySound(Sound.m_SoundName name)
+    {
+        m_SoundManager.PlaySound(name);
     }
 
 }

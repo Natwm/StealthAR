@@ -38,6 +38,7 @@ public class ActionableObjects : MonoBehaviour
             Debug.Log("Open");
             foreach (GameObject wall in m_OpenWall)
             {
+                Debug.Log("Open door " + wall.name);
                 wall.GetComponent<DoorBehaviours>().OpenDoor();
             }
         }
@@ -51,6 +52,7 @@ public class ActionableObjects : MonoBehaviour
             Debug.Log("Close");
             foreach (GameObject wall in m_CloseWall)
             {
+                Debug.Log("close door " + wall.name);
                 wall.GetComponent<DoorBehaviours>().CloseDoor();
             }
 

@@ -21,6 +21,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private Button m_ExitButton;
     [SerializeField] private Button m_ResumeButton;
     [SerializeField] private Button m_JumpButton;
+    [SerializeField] private Button m_TryAgainButton;
     [SerializeField] private Button m_ExitConfirmeButton;
     [SerializeField] private Button m_ExitUnconfirmeButton;
 
@@ -48,6 +49,7 @@ public class CanvasManager : MonoBehaviour
 
         m_JumpButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Jump);
         m_UseButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Interaction);
+        m_TryAgainButton.onClick.AddListener(GameObject.FindObjectOfType<LevelManager>().ReloadLevel);
 
         if (m_SettingsPanel.active)
         {

@@ -7,6 +7,7 @@ public class PressurePlateBehaviours : ActionableObjects, IActionableObjects
     #region Interface
     public void Interaction()
     {
+        GameManager.PlaySoundStatic(Sound.m_SoundName.PressurePlaqueAction);
         MoveWall();
         ActionPlatform();
         Debug.Log("interaction");
