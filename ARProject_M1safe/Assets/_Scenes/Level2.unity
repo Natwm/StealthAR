@@ -262,7 +262,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7258067455772841308}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651832310}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de8d2733652511d4cb85c3b5e1fa13c8, type: 3}
@@ -563,25 +563,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ebf3990a88c9c046b81fac09f99a8b3, type: 3}
---- !u!1 &1651832310 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7258067454166842362, guid: 245bb29184f3b5a4496810e3b55af844,
-    type: 3}
-  m_PrefabInstance: {fileID: 7258067455772841308}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1651832315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651832310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e529bc069a2afb45b054429a373669d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activePlatform: {fileID: 0}
 --- !u!114 &1807413848 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7286398293182809398, guid: a831fec458aa66e4d8fcc86ba479dc06,
@@ -1311,16 +1292,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7258067454166842356, guid: 245bb29184f3b5a4496810e3b55af844,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258067454166842356, guid: 245bb29184f3b5a4496810e3b55af844,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7258067454166842359, guid: 245bb29184f3b5a4496810e3b55af844,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1381,11 +1352,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7258067454166842362, guid: 245bb29184f3b5a4496810e3b55af844,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
         type: 3}
       propertyPath: cam
@@ -1396,31 +1362,6 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 7286398294951360367}
-    - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
-        type: 3}
-      propertyPath: m_AmountOfWall
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
-        type: 3}
-      propertyPath: m_AmountOfPlatform
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
-        type: 3}
-      propertyPath: m_AmountOfCube
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
-        type: 3}
-      propertyPath: groundMask.m_Bits
-      value: 1296
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
-        type: 3}
-      propertyPath: interactLayer.m_Bits
-      value: 3072
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245bb29184f3b5a4496810e3b55af844, type: 3}
 --- !u!1001 &7286398294951360366

@@ -47,6 +47,7 @@ public class CanvasManager : MonoBehaviour
         m_AmountOfPlatform.text = "0";
 
         m_JumpButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Jump);
+        m_UseButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Interaction);
 
         if (m_SettingsPanel.active)
         {
