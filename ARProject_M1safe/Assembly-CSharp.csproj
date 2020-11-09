@@ -91,8 +91,8 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-    <Compile Include="Assets\SC_MovingPlatform.cs" />
     <Compile Include="Assets\_Scripts\AR\Letest.cs" />
+    <Compile Include="Assets\_Scripts\Audio\Sound.cs" />
     <Compile Include="Assets\_Scripts\Camera\CameraFocus.cs" />
     <Compile Include="Assets\_Scripts\ComputerBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Dialogues\Dialogues.cs" />
@@ -102,6 +102,7 @@
     <Compile Include="Assets\_Scripts\Manager\DialogueManager.cs" />
     <Compile Include="Assets\_Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\_Scripts\Manager\LevelManager.cs" />
+    <Compile Include="Assets\_Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\_Scripts\Proto 1\ARPlayerBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 1\Bullets\LazerBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 1\Spawner\SpawnerBehaviours.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Assets\_Scripts\Proto 3\PickableObject\SpawningObjects.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\PickableObject\WallBehaviours.cs" />
     <Compile Include="Assets\_Scripts\Proto 3\Player\JoystickCharacterControler.cs" />
+    <Compile Include="Assets\_Scripts\SC_MovingPlatform.cs" />
     <Compile Include="Assets\_Scripts\UI\FadeScreen.cs" />
     <Compile Include="Assets\_Scripts\UI\LevelButton.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

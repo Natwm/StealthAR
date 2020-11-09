@@ -110,6 +110,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
         if (mouvement.magnitude >= 0.1f)
         {
+            m_GameManger.PlaySound(Sound.m_SoundName.PlayerMovement);
             m_Animator.SetBool("IsWalking", true);
             float targetAngle = Mathf.Atan2(mouvement.x, mouvement.z) * Mathf.Rad2Deg + cam.gameObject.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnShmoothVelocity, turnShmoothTime);
@@ -158,6 +159,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
     void Collect()
     {
+        m_GameManger.PlaySound(Sound.m_SoundName.PlayerPickUp);
         Debug.Log(interactGO.name);
         switch (interactGO.tag)
         {
@@ -194,6 +196,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         if(m_AmountOfWall > 0)
         {
+            m_GameManger.PlaySound(Sound.m_SoundName.PlayerCreateObject);
             m_AmountOfWall--;
 
             GameObject playerObject = Instantiate(m_WallGO, Wallspawner.position, transform.rotation/*Quaternion.identity*/);
@@ -210,6 +213,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         if(m_AmountOfCube > 0)
         {
+            m_GameManger.PlaySound(Sound.m_SoundName.PlayerCreateObject);
             m_AmountOfCube--;
 
             GameObject playerObject = Instantiate(m_CubeGO, Wallspawner.position, Quaternion.identity);
@@ -226,6 +230,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         if (m_AmountOfPlatform > 0)
         {
+            m_GameManger.PlaySound(Sound.m_SoundName.PlayerCreateObject);
             m_AmountOfPlatform--;
 
             GameObject playerObject = Instantiate(m_PlatformGO, Wallspawner.position, Quaternion.identity);
@@ -283,6 +288,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
     public void Kill()
     {
+        m_GameManger.PlaySound(Sound.m_SoundName.PlayerDied);
         m_GameManger.playerGetKilled();
         Destroy(gameObject);
     }

@@ -48,6 +48,7 @@ public class DoorBehaviours : MonoBehaviour
 
     public void OpenDoor()
     {
+        //GameManager.PlaySoundStatic(Sound.m_SoundName.DoorOpen);
         m_State = doorState.OPEN;
         m_Animator.SetBool("IsOpen", true);
         m_Animator.SetBool("IsClose", false);
