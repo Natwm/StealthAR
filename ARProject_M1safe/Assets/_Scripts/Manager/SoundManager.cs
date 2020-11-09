@@ -26,6 +26,17 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public Sound GetSound(Sound.m_SoundName name)
+    {
+        foreach (Sound audio in m_Sounds)
+        {
+            if(audio.Name == name)
+                return audio;
+        }
+
+        return null;
+    }
+
     public void PlaySound(Sound.m_SoundName name )
     {
         foreach (Sound audio in m_Sounds)

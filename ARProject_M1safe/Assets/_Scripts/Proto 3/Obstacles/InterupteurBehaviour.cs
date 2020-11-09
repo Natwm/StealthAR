@@ -23,7 +23,7 @@ public class InterupteurBehaviour : ActionableObjects, IActionableObjects
         MoveWall();
         ActionPlatform();
         ShowAction();
-        //GameManager.PlaySoundStatic(Sound.m_SoundName.InterupteurAction);
+        GameManager.PlaySoundStatic(Sound.m_SoundName.InterupteurAction);
         //Debug.Log("interaction");
     }
     #endregion
