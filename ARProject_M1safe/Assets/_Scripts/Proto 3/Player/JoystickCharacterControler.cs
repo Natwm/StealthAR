@@ -89,7 +89,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
     void Start()
     {
-        cam = Camera.main;
+        //cam = Camera.main; 
         joystick = FindObjectOfType<Joystick>();
         m_Animator = transform.GetChild(3).GetComponent<Animator>();
         characterController = FindObjectOfType<CharacterController>();
