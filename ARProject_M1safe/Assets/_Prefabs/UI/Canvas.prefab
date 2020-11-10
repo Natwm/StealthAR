@@ -1898,7 +1898,7 @@ Canvas:
   m_GameObject: {fileID: 7286398293182809405}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1970,6 +1970,7 @@ MonoBehaviour:
   m_ExitButton: {fileID: 7286398293754217107}
   m_ResumeButton: {fileID: 0}
   m_JumpButton: {fileID: 3645541330150028022}
+  m_TryAgainButton: {fileID: 0}
   m_ExitConfirmeButton: {fileID: 7286398294283054458}
   m_ExitUnconfirmeButton: {fileID: 7286398293575784590}
   m_InteractionText: USE

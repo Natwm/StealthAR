@@ -89,7 +89,6 @@ Transform:
   m_Children:
   - {fileID: 1663244767028706422}
   - {fileID: 1663244766790111991}
-  - {fileID: 1663244767053602305}
   m_Father: {fileID: 1877615533937224598}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -122,36 +121,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1663244766871129098}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1663244767053602304
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1663244767053602305}
-  m_Layer: 0
-  m_Name: Position 2 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1663244767053602305
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663244767053602304}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 0, z: 1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1663244766871129098}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1663244767837910787
 GameObject:
@@ -371,6 +340,9 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 311
+  shootingObstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1877615533937224599
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d8c809a2720d2479e148262875adc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStatic: 0
+  m_Animator: {fileID: 0}
   bulletGO: {fileID: 115850660687729576, guid: 444d1004a06b77f41a8a75c35c1b3db2, type: 3}
   canonPosition: {fileID: 1663244766713267309}
   timeBtwSpawn: 1
