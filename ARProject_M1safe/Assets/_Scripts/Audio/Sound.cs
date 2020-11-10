@@ -25,7 +25,8 @@ public class Sound
         DroidMouvement,
         Explosion,
         Propulsion,
-        UI
+        UI,
+        CloseDoor
     }
 
     [SerializeField] private m_SoundName name;

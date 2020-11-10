@@ -138,6 +138,7 @@ public class TurretBehaviours : MonoBehaviour
 
         if (timeBtwSpawn <= 0)
         {
+            GameManager.PlaySoundStatic(Sound.m_SoundName.TurretShoot);
             /*GameObject bullet = Instantiate(bulletGO, canonPosition.position, Quaternion.identity);
             bullet.GetComponent<BulletBehaviours>().Projection(target, projectileSpeed);*/
             Debug.Log(target.name);

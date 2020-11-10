@@ -48,7 +48,7 @@ public class DoorBehaviours : MonoBehaviour
 
     public void OpenDoor()
     {
-        //GameManager.PlaySoundStatic(Sound.m_SoundName.DoorOpen);
+        GameManager.PlaySoundStatic(Sound.m_SoundName.DoorOpen);
         m_State = doorState.OPEN;
         m_Animator.SetBool("IsOpen", true);
         m_Animator.SetBool("IsClose", false);
@@ -60,6 +60,7 @@ public class DoorBehaviours : MonoBehaviour
 
     public void CloseDoor()
     {
+        GameManager.PlaySoundStatic(Sound.m_SoundName.CloseDoor);
         m_Animator.SetBool("IsOpen", false);
         m_Animator.SetBool("IsClose", true);
         m_State = doorState.CLOSE;

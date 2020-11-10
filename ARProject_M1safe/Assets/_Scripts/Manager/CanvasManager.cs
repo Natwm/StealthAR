@@ -98,7 +98,7 @@ public class CanvasManager : MonoBehaviour
 
         Debug.Log(spawningObject);
 
-        m_ValidationButton.transform.GetChild(0).GetComponent<TMP_Text>().text = m_ValidSpawnWallText;
+        //m_ValidationButton.transform.GetChild(0).GetComponent<TMP_Text>().text = m_ValidSpawnWallText;
         m_ValidationButton.onClick.AddListener(FindObjectOfType<JoystickCharacterControler>().SpawnObject);
     }
 
@@ -180,4 +180,8 @@ public class CanvasManager : MonoBehaviour
         m_UseButton.interactable = active;
     }
 
+    public void PlayUISound()
+    {
+        GameManager.PlaySoundStatic(Sound.m_SoundName.UI);
+    }
 }
