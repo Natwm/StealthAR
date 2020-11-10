@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void playerGetKilled() {
-
+        PlaySound(Sound.m_SoundName.PlayerDied);
         //Instantiate(playerGO, playerCheckPoint.position, Quaternion.identity);
         canvas.ShowGameOverScreen();
     }
