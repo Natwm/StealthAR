@@ -329,6 +329,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porte
       objectReference: {fileID: 0}
+    - target: {fileID: 5516763323087887041, guid: 92daf59f8138a16469394bfe120aef50,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92daf59f8138a16469394bfe120aef50, type: 3}
 --- !u!1 &2683057785470712322 stripped

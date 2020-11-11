@@ -187,8 +187,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: box
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3817944448365816804, guid: 7a6ac3b0f202e8c4c8d07b29ea69450f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6ac3b0f202e8c4c8d07b29ea69450f, type: 3}
 --- !u!4 &534380066733859279 stripped
 Transform:

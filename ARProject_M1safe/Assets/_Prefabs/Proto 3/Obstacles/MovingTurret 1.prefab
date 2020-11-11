@@ -28,7 +28,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8507715533264494226}
-  - component: {fileID: 8507715533264494231}
   - component: {fileID: 8507715533264494230}
   - component: {fileID: 8866130948405537553}
   m_Layer: 0
@@ -54,19 +53,6 @@ Transform:
   m_Father: {fileID: 8507715534231859235}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8507715533264494231
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8507715533264494312}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.8594077, y: 2.4248223, z: 1}
-  m_Center: {x: 0.082870364, y: 0.7124108, z: 0}
 --- !u!54 &8507715533264494230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -201,6 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8507715534231859235}
   - component: {fileID: 8866130948200617615}
+  - component: {fileID: 7892309223855331487}
   m_Layer: 0
   m_Name: MovingTurret 1
   m_TagString: Untagged
@@ -255,6 +242,19 @@ MonoBehaviour:
   index: 0
   stopRotationDuration: 1
   canTurn: 1
+--- !u!65 &7892309223855331487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507715534231859234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8335519, y: 3.118895, z: 1.8267512}
+  m_Center: {x: 0.04497147, y: 1.5550325, z: 0.10647569}
 --- !u!1 &8866130946539904985
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +579,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 732cbf8713d8b484ab0003eae894a6d2, type: 2}
+    - target: {fileID: -1526964690268444965, guid: 5d0aa2ebff8b98447990874dab566c1f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5d0aa2ebff8b98447990874dab566c1f,
         type: 3}
       propertyPath: m_Name

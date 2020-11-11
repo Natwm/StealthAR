@@ -369,6 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 944534557530787938}
   - component: {fileID: 1138374350}
+  - component: {fileID: 3765831186463575939}
   m_Layer: 0
   m_Name: MovingTurret
   m_TagString: Untagged
@@ -423,6 +424,19 @@ MonoBehaviour:
   index: 0
   stopRotationDuration: 1
   canTurn: 1
+--- !u!65 &3765831186463575939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944534557530787939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8335519, y: 3.118895, z: 1.8267512}
+  m_Center: {x: 0.04497147, y: 1.5550325, z: 0.10647569}
 --- !u!95 &2329325313883406932
 Animator:
   serializedVersion: 3
