@@ -12,6 +12,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject m_ExitPanel;
     [SerializeField] private GameObject m_GameOverPanel;
     [SerializeField] private GameObject m_DialoguePanel;
+    [SerializeField] private GameObject m_ValidationSpawnPanel;
 
     [Header("Wall Buttons")]
     [SerializeField] private Button m_UseButton;
@@ -24,6 +25,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private Button m_TryAgainButton;
     [SerializeField] private Button m_ExitConfirmeButton;
     [SerializeField] private Button m_ExitUnconfirmeButton;
+    [SerializeField] private Button m_RotateObjectButton;
 
     [Space]
     [Header("Settings Buttons")]
@@ -60,13 +62,11 @@ public class CanvasManager : MonoBehaviour
         {
             m_GameOverPanel.SetActive(false);
         }
-        //
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (m_ValidationSpawnPanel.active)
+        {
+            m_ValidationSpawnPanel.SetActive(false);
+        }
     }
 
     #region Dialogues
@@ -92,19 +92,19 @@ public class CanvasManager : MonoBehaviour
     public void SetNewObject(IPickable spawningObject)
     {
         m_UseButton.gameObject.SetActive(false);
-        m_ValidationButton.gameObject.SetActive(true);
+        m_ValidationSpawnPanel.gameObject.SetActive(true);
 
-        m_ValidationButton.onClick.RemoveAllListeners(); //= null;
+        m_ValidationButton.onClick.RemoveAllListeners();
+        m_RotateObjectButton.onClick.RemoveAllListeners();
 
-        Debug.Log(spawningObject);
-
-        //m_ValidationButton.transform.GetChild(0).GetComponent<TMP_Text>().text = m_ValidSpawnWallText;
         m_ValidationButton.onClick.AddListener(FindObjectOfType<JoystickCharacterControler>().SpawnObject);
+        m_RotateObjectButton.onClick.AddListener(spawningObject.RotateObject);
     }
 
     public void DeleteNewWall()
     {
-        m_ValidationButton.gameObject.SetActive(false);
+        m_ValidationSpawnPanel.gameObject.SetActive(false);
+        //m_ValidationButton.gameObject.SetActive(false);
         m_UseButton.gameObject.SetActive(true);
     }
 

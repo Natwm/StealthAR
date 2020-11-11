@@ -59,5 +59,10 @@ public class WallBehaviours : SpawningObjects, IPickable
         canPlant = true;
         GetComponent<Renderer>().material = canPlantMat;
     }
+
+    public void RotateObject()
+    {
+        transform.Rotate(new Vector3(transform.rotation.x, angle, transform.rotation.z));
+    }
     #endregion
 }

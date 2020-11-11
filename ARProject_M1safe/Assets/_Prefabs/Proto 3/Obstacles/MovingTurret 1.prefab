@@ -28,8 +28,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8507715533264494226}
-  - component: {fileID: 8507715533264494229}
-  - component: {fileID: 8507715533264494228}
   - component: {fileID: 8507715533264494231}
   - component: {fileID: 8507715533264494230}
   - component: {fileID: 8866130948405537553}
@@ -56,53 +54,6 @@ Transform:
   m_Father: {fileID: 8507715534231859235}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8507715533264494229
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8507715533264494312}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8507715533264494228
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8507715533264494312}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a7dd92e39d3e54c97b4be026824ecd9e, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!65 &8507715533264494231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -158,6 +109,9 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4407
+  shootingObstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8507715533851104785
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +202,7 @@ GameObject:
   - component: {fileID: 8507715534231859235}
   - component: {fileID: 8866130948200617615}
   m_Layer: 0
-  m_Name: SphereTurret 1
+  m_Name: MovingTurret 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,10 +238,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d8c809a2720d2479e148262875adc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStatic: 0
+  m_Animator: {fileID: 0}
   bulletGO: {fileID: 115850660687729576, guid: 444d1004a06b77f41a8a75c35c1b3db2, type: 3}
   canonPosition: {fileID: 8866130946539904984}
   timeBtwSpawn: 1
   startTimeBtwSpawn: 5
+  m_Damage: 0
   projectileSpeed: 3
   m_PositionParent: {fileID: 8866130946680854460}
   m_ListOfPosition:

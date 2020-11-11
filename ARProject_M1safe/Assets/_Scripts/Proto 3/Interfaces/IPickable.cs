@@ -6,6 +6,8 @@ public interface IPickable
 {
    // void Interaction(Vector3 playerPosition);
     void ValidationSpawn();
+
+    void RotateObject();
 }
 
 

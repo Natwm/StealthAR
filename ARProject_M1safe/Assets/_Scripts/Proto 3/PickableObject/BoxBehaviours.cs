@@ -20,6 +20,11 @@ public class BoxBehaviours : SpawningObjects, IPickable
         }
 
     }
+
+    public void RotateObject()
+    {
+        transform.Rotate(new Vector3(transform.rotation.x, angle, transform.rotation.z));
+    }
     #endregion
 
     #region TRIGGER && COLLISION
