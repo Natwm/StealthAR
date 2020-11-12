@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class TurretBehaviours : MonoBehaviour
 {
@@ -40,8 +41,9 @@ public class TurretBehaviours : MonoBehaviour
 
     private FieldOfView m_TurretFOV;
 
-    private GameObject target;
-    private Vector3 targetPosition;
+    public GameObject target;
+    public  Vector3 targetPosition;
+    public Quaternion TargetRotation = Quaternion.identity;
 
     public bool canTurn = true;
 
@@ -69,62 +71,13 @@ public class TurretBehaviours : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!canTurn && m_TurretFOV.VisibleGameobject.Count <= 0)
-            canTurn = true;
+        /*if (!canTurn && m_TurretFOV.VisibleGameobject.Count <= 0)
+            canTurn = true;*/
 
-        if (canTurn && !isStatic)
-        {
-            
-            CalculeRotation(m_ListOfPosition[index]);
+        TurretMovement();
+        CanShootOnObject();
 
-            if (transform.position == m_ListOfPosition[index])
-            {
-                TurretRotation(index);
-            }
-            TurretMovement(index);
-        }
-        if (m_TurretFOV.VisibleGameobject.Count > 0)
-        {
-            m_Animator.SetBool("stop", true);
-            canTurn = false;
-            try
-            {
-                target = GetTarget();
-                targetPosition = target.transform.position;
-                Shoot(target);
-            }
-            catch(Exception e)
-            {
-                target = null;
-                canTurn = true;
-            }
-            
-        }
-        else if (target!= null && !isStatic)
-        {
-            m_Animator.SetBool("stop", false);
-            //WaitBeforefollow();
-            CalculeRotation(targetPosition);
-            MoveToPosition(targetPosition);
-            if (targetPosition == transform.position)
-            {
-                target = null;
-                canTurn = true;
-            }
-
-        }
-        if(!isStatic)
-            m_Animator.SetBool("IsWalking", true);
-        /*if (m_TurretFOV.VisibleGameobject.Count > 0)
-        {
-            canTurn = false;
-            target = GetTarget();
-            Shoot(target);
-        }
-        else if (target != null)
-        {
-            MoveToPosition(target.transform.position);
-        }*/
+        /**/
     }
 
     /*bool WaitBeforefollow()
@@ -132,6 +85,66 @@ public class TurretBehaviours : MonoBehaviour
         stopDurationBeforeFollow -= Time.deltaTime;
         return stopDurationBeforeFollow <= 0.0f ? true : WaitBeforefollow();
     }*/
+
+    void TurretMovement()
+    {
+        if (canTurn && !isStatic)
+        {
+            CalculeRotation(m_ListOfPosition[index]);
+
+            if (transform.position == m_ListOfPosition[index])
+            {
+                TargetRotation = Quaternion.identity;
+                StartCoroutine(WaitUntilRotationDone());
+            }
+            TurretMovement(index);
+        }
+    }
+
+    void CanShootOnObject()
+    {
+        if (m_TurretFOV.VisibleGameobject.Count > 0)
+        {
+            m_Animator.SetBool("stop", true);
+            canTurn = false;
+            FindTarget();
+        }
+
+        else if (target != null && !isStatic)
+        {
+            m_Animator.SetBool("stop", false);
+            GoToplayerLastPosition();
+        }
+    }
+
+    void GoToplayerLastPosition()
+    {
+        CalculeRotation(targetPosition);
+        Debug.Log(targetPosition);
+        MoveToPosition(targetPosition);
+        if (targetPosition == transform.position)
+        {
+            Debug.Log("test");
+            target = null;
+            canTurn = true;
+        }
+    }
+
+    void FindTarget()
+    {
+        try
+        {
+            target = GetTarget();
+            targetPosition = new Vector3 (target.transform.position.x,transform.position.y, target.transform.position.z);
+            Shoot(target);
+            
+        }
+        catch (Exception e)
+        {
+            target = null;
+            canTurn = true;
+        }
+    }
 
     void Shoot(GameObject target)
     {
@@ -154,7 +167,8 @@ public class TurretBehaviours : MonoBehaviour
 
     void CalculeRotation(Vector3 position)
     {
-        Quaternion TargetRotation = Quaternion.LookRotation(position - transform.position);
+        if(TargetRotation == Quaternion.identity)
+            TargetRotation = Quaternion.LookRotation(position - transform.position);
 
         transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, m_MovementSpeed * Time.deltaTime);
     }
@@ -166,13 +180,13 @@ public class TurretBehaviours : MonoBehaviour
             index = 0;
         yield return new WaitForSeconds(stopRotationDuration);
         
-
         canTurn = true;
     }
 
     void MoveToPosition(Vector3 position)
     {
         transform.position = Vector3.MoveTowards(transform.position, position, m_MovementSpeed * Time.deltaTime);
+        //transform.DOMove(position, m_MovementSpeed);
     }
 
     void TurretMovement(int index)
@@ -180,10 +194,7 @@ public class TurretBehaviours : MonoBehaviour
         //transform.LookAt(m_ListOfPosition[index]);
         MoveToPosition(m_ListOfPosition[index]);   
     }
-    void TurretRotation(int index)
-    {
-        StartCoroutine(WaitUntilRotationDone());
-    }
+
 
     GameObject GetTarget()
     {

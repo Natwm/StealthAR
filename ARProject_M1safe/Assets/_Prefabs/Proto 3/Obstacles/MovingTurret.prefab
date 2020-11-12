@@ -211,7 +211,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 944534555489992403}
-  - component: {fileID: 944534555489992407}
   - component: {fileID: 1334659920}
   m_Layer: 0
   m_Name: Cube
@@ -235,22 +234,6 @@ Transform:
   m_Father: {fileID: 944534557530787938}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &944534555489992407
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944534555489992361}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 14
-  m_CollisionDetection: 0
 --- !u!114 &1334659920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4176bad0c5132e54b95630fab0125725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 10
+  viewRadius: 7.02
   viewAngle: 98
   meshResolution: 0.294
   viewMeshFilter: {fileID: 1864371448}
@@ -273,13 +256,13 @@ MonoBehaviour:
   visibleGameObject: []
   targetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 1335
   shootingObstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
 --- !u!1 &944534557530787939
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +273,8 @@ GameObject:
   m_Component:
   - component: {fileID: 944534557530787938}
   - component: {fileID: 1138374350}
+  - component: {fileID: 110518246}
+  - component: {fileID: 110518247}
   m_Layer: 0
   m_Name: MovingTurret
   m_TagString: Untagged
@@ -340,10 +325,42 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   m_ListOfRotation: []
-  m_MovementSpeed: 1
+  m_MovementSpeed: 2
   index: 0
   stopRotationDuration: 1
+  target: {fileID: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  TargetRotation: {x: 0, y: 0, z: 0, w: 0}
   canTurn: 1
+--- !u!54 &110518246
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944534557530787939}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!65 &110518247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944534557530787939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.3979943, z: 1}
+  m_Center: {x: 0, y: 1.1698443, z: 0}
 --- !u!95 &2329325313883406932
 Animator:
   serializedVersion: 3
@@ -387,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7717505024868750387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: -2.2000003, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 692123646}

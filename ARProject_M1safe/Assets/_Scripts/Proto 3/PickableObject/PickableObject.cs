@@ -62,7 +62,6 @@ public class PickableObject : MonoBehaviour
             Destroy(gameObject);
         isPick = true;
         GetComponent<BoxCollider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
         transform.GetChild(0).gameObject.SetActive(false);
         transform.position = position;
         transform.localScale = scale;
