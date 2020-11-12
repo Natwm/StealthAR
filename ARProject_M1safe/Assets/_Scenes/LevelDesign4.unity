@@ -2056,7 +2056,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2011560537704118565, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
 --- !u!1001 &116497483
 PrefabInstance:
@@ -18302,7 +18303,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2011560537704118565, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
 --- !u!1001 &1280261546
 PrefabInstance:
@@ -24731,7 +24733,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2011560537704118565, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
 --- !u!4 &1718052065 stripped
 Transform:
@@ -30170,7 +30173,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2011560537704118565, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
 --- !u!4 &2114730258 stripped
 Transform:
