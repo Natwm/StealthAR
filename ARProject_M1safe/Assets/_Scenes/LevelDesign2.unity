@@ -25946,12 +25946,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2011560537704118565, guid: 79c593b944522ed478af5ff6ea5352d7,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1cbdcdbc573776f478d481a5b436fc20, type: 2}
     - target: {fileID: 2011560537704118570, guid: 79c593b944522ed478af5ff6ea5352d7,
         type: 3}
       propertyPath: m_Name
       value: Drone
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2011560537704118565, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 79c593b944522ed478af5ff6ea5352d7, type: 3}
 --- !u!4 &498416797 stripped
 Transform:
