@@ -161,10 +161,11 @@ public class TurretBehaviours : MonoBehaviour
     IEnumerator WaitUntilRotationDone()
     {
         canTurn = false;
-        yield return new WaitForSeconds(stopRotationDuration);
         index++;
         if (index >= m_ListOfPosition.Count)
             index = 0;
+        yield return new WaitForSeconds(stopRotationDuration);
+        
 
         canTurn = true;
     }
