@@ -1283,6 +1283,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SphereTurret (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8280256483066658194, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
 --- !u!4 &79091566 stripped
@@ -9344,11 +9349,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 535070594, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.24
+      value: 3.28
       objectReference: {fileID: 0}
     - target: {fileID: 535070594, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
       propertyPath: m_LocalPosition.x
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 766257411, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
+      propertyPath: m_LocalPosition.x
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 766257411, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138374350, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
+      propertyPath: m_ListOfPosition.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 944534557530787938, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
@@ -9358,7 +9375,7 @@ PrefabInstance:
     - target: {fileID: 944534557530787938, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.6921644
+      value: 6.62
       objectReference: {fileID: 0}
     - target: {fileID: 944534557530787938, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
@@ -9409,6 +9426,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SphereTurret (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765831186463575939, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280256483066658194, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280256483066658194, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.025
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
@@ -13019,6 +13051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SphereTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280256483066658194, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
@@ -27373,6 +27410,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 263547453}
     m_Modifications:
+    - target: {fileID: 535070594, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 535070594, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 766257411, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.74
+      objectReference: {fileID: 0}
     - target: {fileID: 944534557530787938, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27381,7 +27430,7 @@ PrefabInstance:
     - target: {fileID: 944534557530787938, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.6921644
+      value: 6.62
       objectReference: {fileID: 0}
     - target: {fileID: 944534557530787938, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
@@ -29720,6 +29769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SphereTurret (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280256483066658194, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
