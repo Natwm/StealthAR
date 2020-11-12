@@ -79,7 +79,14 @@ public class TurretBehaviours : MonoBehaviour
 
             if (transform.position == m_ListOfPosition[index])
             {
-                TurretRotation(index);
+                index++;
+                if (index >= m_ListOfPosition.Count)
+                    index = 0;
+
+                if(index == 0)
+                    TurretRotation(m_ListOfPosition.Count);
+                else
+                    TurretRotation(index-1);
             }
             TurretMovement(index);
         }
@@ -162,9 +169,9 @@ public class TurretBehaviours : MonoBehaviour
     {
         canTurn = false;
         yield return new WaitForSeconds(stopRotationDuration);
-        index++;
+        /*index++;
         if (index >= m_ListOfPosition.Count)
-            index = 0;
+            index = 0;*/
 
         canTurn = true;
     }
