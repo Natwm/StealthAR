@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7da4d3a6d4511594a98873b93010bc68
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Titillium Web SemiBold
+  fontNames:
+  - Titillium Web SemiBold
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 688dfe532e00de3479c80cd8f5d239c6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
