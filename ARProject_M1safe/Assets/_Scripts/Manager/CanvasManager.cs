@@ -29,9 +29,9 @@ public class CanvasManager : MonoBehaviour
 
     [Space]
     [Header("Settings Buttons")]
-    [SerializeField] private string m_InteractionText = "USE";
-    [SerializeField] private string m_SpawnWallText = "SPAWN WALL";
-    [SerializeField] private string m_ValidSpawnWallText = "VALID";
+    [SerializeField] private Button m_SpawnButtonWall;
+    [SerializeField] private Button m_SpawnButtonPlatform;
+    [SerializeField] private Button m_SpawnButtonCube;
 
     [Header("Text Dialogue")]
     public TMP_Text dialogueText;
@@ -51,7 +51,10 @@ public class CanvasManager : MonoBehaviour
 
         m_JumpButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Jump);
         m_UseButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Interaction);
-        m_TryAgainButton.onClick.AddListener(GameObject.FindObjectOfType<LevelManager>().ReloadLevel);
+        
+        m_SpawnButtonWall.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnWall);
+        m_SpawnButtonPlatform.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnPlatform);
+        m_SpawnButtonCube.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnCube);
 
         if (m_SettingsPanel.active)
         {
@@ -68,6 +71,8 @@ public class CanvasManager : MonoBehaviour
             m_ValidationSpawnPanel.SetActive(false);
         }
     }
+
+    //void SetUpNewPlayer();
 
     #region Dialogues
     public void UpdateDialogueText(string sentences)

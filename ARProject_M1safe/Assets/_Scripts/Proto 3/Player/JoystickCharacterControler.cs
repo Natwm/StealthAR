@@ -23,6 +23,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     [Header("Player Component")]
     [SerializeField] private CharacterController characterController;
     public Camera cam;
+    [SerializeField] private GameObject m_Visuel;
 
     [Space]
     [Header("Environment Check Properties")]
@@ -50,8 +51,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     [SerializeField] private Joystick joystick;
 
     [Space]
-    [Header("TEST")]
-    [SerializeField] private GameObject Wall;
+    [Header("Spawner")]
     [SerializeField] private Transform Wallspawner;
 
     [Space]
@@ -77,19 +77,31 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
 
     [Space]
+    [Header("Particule")]
+    [SerializeField] ParticleSystem m_SpawnEffect;
+    [SerializeField] GameObject m_DeathEffect;
+
+    [Space]
     [Header("Audio")]
     [SerializeField] AudioSource m_AudioSource;
-    [SerializeField] AudioClip PlayerMovement;
-    [SerializeField] AudioClip PlayerSpawn;
-    [SerializeField] AudioClip PlayerPickUp;
-    [SerializeField] AudioClip PlayerCreateObject; 
-    [SerializeField] AudioClip PlayerCreateObjectCant;
+
+
+    private Vector3 m_StartScale;
+
+
+    public GameObject Visuel { get => m_Visuel; set => m_Visuel = value; }
+    public ParticleSystem SpawnEffect { get => m_SpawnEffect; set => m_SpawnEffect = value; }
+    public GameObject DeathEffect { get => m_DeathEffect; set => m_DeathEffect = value; }
+    public Vector3 StartScale { get => m_StartScale; set => m_StartScale = value; }
+    public int LifePoint { get => m_LifePoint; set => m_LifePoint = value; }
+
 
     //Sequence m_CollectSequence = DOTween.Sequence();
 
     void Start()
     {
         //cam = Camera.main; 
+        m_StartScale = transform.localScale;
         joystick = FindObjectOfType<Joystick>();
         m_Animator = transform.GetChild(3).GetComponent<Animator>();
         characterController = FindObjectOfType<CharacterController>();
@@ -101,6 +113,10 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Kill();
+        }
             TpsMove();
     }
 
@@ -314,8 +330,12 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     public void Kill()
     {
         m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerDied));
-        m_GameManager.playerGetKilled();
-        Destroy(gameObject);
+        Visuel.SetActive(false);
+        Instantiate(m_DeathEffect,new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+        StartCoroutine(m_GameManager.playerGetKilled(this.gameObject));
+
+
+        //Destroy(gameObject);
     }
     #endregion
 

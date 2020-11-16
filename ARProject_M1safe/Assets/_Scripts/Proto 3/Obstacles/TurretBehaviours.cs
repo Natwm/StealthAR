@@ -41,11 +41,16 @@ public class TurretBehaviours : MonoBehaviour
 
     private FieldOfView m_TurretFOV;
 
-    public GameObject target;
-    public  Vector3 targetPosition;
-    public Quaternion TargetRotation = Quaternion.identity;
+    [Space]
+    [Header("Effect")]
+    [SerializeField] private ParticleSystem m_ShootEffectRight;
+    [SerializeField] private ParticleSystem m_ShootEffectLeft;
 
-    public bool canTurn = true;
+    private GameObject target;
+    private Vector3 targetPosition;
+    private Quaternion TargetRotation = Quaternion.identity;
+
+    private bool canTurn = true;
 
     // Start is called before the first frame update
     void Start()
@@ -157,6 +162,17 @@ public class TurretBehaviours : MonoBehaviour
             Debug.Log(target.name);
             target.GetComponent<IDamageable<int>>().Damage(m_Damage);
             timeBtwSpawn = startTimeBtwSpawn;
+
+            int val = UnityEngine.Random.RandomRange(1, 3);
+
+            if(val == 1)
+            {
+                m_ShootEffectLeft.Play();
+            }
+            else
+            {
+                m_ShootEffectRight.Play();
+            }
         }
         else
         {

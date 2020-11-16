@@ -51,13 +51,13 @@ public class WallBehaviours : SpawningObjects, IPickable
     private void OnTriggerEnter(Collider other)
     {
         canPlant = false;
-        GetComponent<Renderer>().material = cantPlantMat;
+        //GetComponent<Renderer>().material = cantPlantMat;
     }
 
     private void OnTriggerExit(Collider other)
     {
         canPlant = true;
-        GetComponent<Renderer>().material = canPlantMat;
+        //GetComponent<Renderer>().material = canPlantMat;
     }
 
     public void RotateObject()

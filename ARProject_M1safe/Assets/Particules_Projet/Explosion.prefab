@@ -14195,7 +14195,7 @@ GameObject:
   - component: {fileID: 6527326849907557543}
   - component: {fileID: 6527326849907670279}
   m_Layer: 0
-  m_Name: WFXMR_ExplosiveSmoke Small
+  m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14210,7 +14210,7 @@ Transform:
   m_GameObject: {fileID: 6527326849892326855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.39, y: 3.15, z: -2.1019404}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 6527326849892352481}
   - {fileID: 6527326849892352489}

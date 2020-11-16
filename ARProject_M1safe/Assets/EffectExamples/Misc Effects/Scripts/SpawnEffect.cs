@@ -23,7 +23,7 @@ public class SpawnEffect : MonoBehaviour {
         var main = ps.main;
         main.duration = spawnEffectTime;
 
-        ps.Play();
+        //ps.Play();
 
     }
 	
