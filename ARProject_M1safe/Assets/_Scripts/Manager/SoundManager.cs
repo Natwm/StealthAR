@@ -48,4 +48,17 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
+
+    public void PlaySound(Sound.m_SoundName name, AudioSource source)
+    {
+        foreach (Sound audio in m_Sounds)
+        {
+            if (audio.Name == name)
+            {
+                source.clip = audio.Clip;
+                source.Play();
+                Debug.Log("Can");
+            }
+        }
+    }
 }

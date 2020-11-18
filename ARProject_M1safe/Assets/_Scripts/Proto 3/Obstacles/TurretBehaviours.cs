@@ -7,10 +7,15 @@ using DG.Tweening;
 public class TurretBehaviours : MonoBehaviour
 {
 
-    //[SerializeField] private float stopDurationBeforeFollow = 1f;
-    //[SerializeField] private float startDurationBeforFollow;
-    [SerializeField] private bool isStatic = false;
+    public enum Status
+    {
+        NORMAL,
+        PATROL,
+        ATTACK
+    }
 
+    [SerializeField] private bool isStatic = false;
+    [SerializeField] private Status m_status = Status.NORMAL;
 
     [Header("Animation")]
     [SerializeField] private Animator m_Animator;
@@ -55,12 +60,15 @@ public class TurretBehaviours : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         m_ListOfRotation.Clear();
         m_ListOfPosition.Clear();
 
         m_TurretFOV = transform.GetChild(0).GetComponent<FieldOfView>();
         m_Animator = transform.GetChild(2).GetComponent<Animator>();
+
+        m_status = Status.NORMAL;
+        m_TurretFOV.ChangeColor(m_status);
 
         if (!isStatic)
         {
@@ -118,7 +126,14 @@ public class TurretBehaviours : MonoBehaviour
         else if (target != null && !isStatic)
         {
             m_Animator.SetBool("stop", false);
+            m_status = Status.PATROL;
+            m_TurretFOV.ChangeColor(m_status);
             GoToplayerLastPosition();
+        }
+        else
+        {
+            m_status = Status.NORMAL;
+            m_TurretFOV.ChangeColor(m_status);
         }
     }
 
@@ -132,6 +147,8 @@ public class TurretBehaviours : MonoBehaviour
             Debug.Log("test");
             target = null;
             canTurn = true;
+            m_status = Status.NORMAL;
+            m_TurretFOV.ChangeColor(m_status);
         }
     }
 
@@ -140,6 +157,8 @@ public class TurretBehaviours : MonoBehaviour
         try
         {
             target = GetTarget();
+            m_status = Status.ATTACK;
+            m_TurretFOV.ChangeColor(m_status);
             targetPosition = new Vector3 (target.transform.position.x,transform.position.y, target.transform.position.z);
             Shoot(target);
             
@@ -165,14 +184,25 @@ public class TurretBehaviours : MonoBehaviour
 
             int val = UnityEngine.Random.RandomRange(1, 3);
 
-            if(val == 1)
+            if (!isStatic)
             {
-                m_ShootEffectLeft.Play();
+                if (val == 1)
+                {
+                    m_ShootEffectLeft.Play();
+                }
+                else
+                {
+                    m_ShootEffectRight.Play();
+                }
             }
             else
             {
-                m_ShootEffectRight.Play();
+                Debug.Log("rotation");
+                CalculeRotationShoot(m_ShootEffectLeft.gameObject, target.transform.position);
+                m_ShootEffectLeft.Play();
             }
+
+            
         }
         else
         {
@@ -188,6 +218,16 @@ public class TurretBehaviours : MonoBehaviour
 
         transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, m_MovementSpeed * Time.deltaTime);
     }
+
+    void CalculeRotationShoot(GameObject shoot,Vector3 position)
+    {
+        shoot.transform.LookAt(position);
+        /*if (TargetRotation == Quaternion.identity)
+            TargetRotation = Quaternion.LookRotation(position - shoot.transform.position);
+
+        shoot.transform.rotation = Quaternion.Slerp(shoot.transform.rotation, TargetRotation, m_MovementSpeed * Time.deltaTime);*/
+    }
+
     IEnumerator WaitUntilRotationDone()
     {
         canTurn = false;

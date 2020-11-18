@@ -36,11 +36,18 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] private LayerMask shootingObstacleMask;
 
+    [Space]
+    [Header("Material Color")]
+    [SerializeField] private Material fovMat;
+    [SerializeField] private Color m_BasicColor;
+    [SerializeField] private Color m_PatrouilleCollor;
+    [SerializeField] private Color m_ActionColor;
     #endregion
 
     #region UPDATE | FIXEDUPDATE | LATEUPDATE
     private void Start()
     {
+        fovMat = transform.GetChild(0).GetComponent<Renderer>().material;
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
 
@@ -48,20 +55,31 @@ public class FieldOfView : MonoBehaviour
 
         StartCoroutine("FindTargetsWithDelay", delay);
         //StartCoroutine("DestroyPlayerWithDelay", delay + shiftDelay);
-    }
-
-    private void Update()
-    {
-       
-    }
-
-    
+    }  
 
     private void LateUpdate()
     {
         DrawFieldOfView();
     }
     #endregion
+
+    public void ChangeColor(TurretBehaviours.Status turretStatus)
+    {
+        switch (turretStatus)
+        {
+            case TurretBehaviours.Status.NORMAL:
+                fovMat.color = m_BasicColor;
+                break;
+            case TurretBehaviours.Status.PATROL:
+                fovMat.color = m_PatrouilleCollor;
+                break;
+            case TurretBehaviours.Status.ATTACK:
+                fovMat.color = m_ActionColor;
+                break;
+            default:
+                break;
+        }
+    }
 
     #region FindTarget
     void FindVisibleTargets()
