@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 5
-  viewAngle: 27
+  viewAngle: 132
   meshResolution: 0.39
   viewMeshFilter: {fileID: 1864371448}
   delay: 0
@@ -189,6 +189,10 @@ MonoBehaviour:
   shootingObstacleMask:
     serializedVersion: 2
     m_Bits: 1024
+  fovMat: {fileID: 0}
+  m_BasicColor: {r: 0.28034887, g: 0.6791647, b: 0.7924528, a: 0.6039216}
+  m_PatrouilleCollor: {r: 0.8867924, g: 0.4824766, b: 0.20496619, a: 0.8509804}
+  m_ActionColor: {r: 1, g: 0, b: 0, a: 0.5529412}
 --- !u!1 &944534557150344784
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStatic: 1
+  m_status: 0
   m_Animator: {fileID: 0}
   bulletGO: {fileID: 115850660687729576, guid: 444d1004a06b77f41a8a75c35c1b3db2, type: 3}
   canonPosition: {fileID: 551141273}

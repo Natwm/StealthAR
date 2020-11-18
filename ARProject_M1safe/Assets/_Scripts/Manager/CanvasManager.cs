@@ -96,6 +96,8 @@ public class CanvasManager : MonoBehaviour
 
     public void SetNewObject(IPickable spawningObject)
     {
+        m_RotateObjectButton.onClick.RemoveAllListeners();
+
         m_UseButton.gameObject.SetActive(false);
         m_ValidationSpawnPanel.gameObject.SetActive(true);
 
@@ -149,7 +151,7 @@ public class CanvasManager : MonoBehaviour
         m_GameOverPanel.SetActive(true);
     }
 
-    public void IncreaseAmoutOfObject(GameObject pickableObject, int amount)
+    public void UpdateAmoutOfObject(GameObject pickableObject, int amount)
     {
         Debug.Log(pickableObject.name);
         switch (pickableObject.tag)

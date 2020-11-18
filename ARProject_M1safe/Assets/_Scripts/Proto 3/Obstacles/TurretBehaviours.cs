@@ -58,6 +58,8 @@ public class TurretBehaviours : MonoBehaviour
     private bool canTurn = true;
 
     // Start is called before the first frame update
+
+
     void Start()
     {
         
@@ -68,6 +70,7 @@ public class TurretBehaviours : MonoBehaviour
         m_Animator = transform.GetChild(2).GetComponent<Animator>();
 
         m_status = Status.NORMAL;
+        Debug.Break();
         m_TurretFOV.ChangeColor(m_status);
 
         if (!isStatic)

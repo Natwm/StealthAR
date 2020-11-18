@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     public void PlayerPickAnObject(GameObject pickableObject, int amount)
     {
         Debug.Log(amount);
-        canvas.IncreaseAmoutOfObject(pickableObject, amount);
+        canvas.UpdateAmoutOfObject(pickableObject, amount);
     }
 
     public void NewObjectAppear(IPickable spawningObject)

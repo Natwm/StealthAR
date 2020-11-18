@@ -52,7 +52,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
     [Space]
     [Header("Spawner")]
-    [SerializeField] private Transform Wallspawner;
+    [SerializeField] private Transform Objectspawner;
 
     [Space]
     [Header("Inventory")]
@@ -84,6 +84,14 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     [Space]
     [Header("Audio")]
     [SerializeField] AudioSource m_AudioSource;
+
+    [Space]
+    [Header("Animation variable")]
+    [Min(-360)]
+    [SerializeField] int m_RotattionInZValue = -180;
+    [SerializeField] float m_MoveToObjectDuration = 1f;
+    [SerializeField] float m_RotationDuration = 1f;
+    [SerializeField] float m_ScaleToZeroDuration = 0.7f;
 
 
     private Vector3 m_StartScale;
@@ -240,12 +248,19 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
             m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerCreateObject));
             m_AmountOfWall--;
 
-            GameObject playerObject = Instantiate(m_WallGO, Wallspawner.position, transform.rotation/*Quaternion.identity*/);
-            playerObject.transform.parent = Wallspawner;
+            GameObject playerObject = Instantiate(m_WallGO, Objectspawner.position, transform.rotation/*Quaternion.identity*/);
+            Vector3 scale = playerObject.transform.localScale;
+            playerObject.transform.localScale = Vector3.zero;
+            playerObject.transform.parent = Objectspawner;
+
             playerObject.GetComponent<BoxCollider>().isTrigger = true;
             m_GameManager.NewObjectAppear(playerObject.GetComponent<WallBehaviours>());
 
             m_GameManager.PlayerPickAnObject(playerObject, m_AmountOfWall);
+
+            playerObject.transform.DOMove(Objectspawner.transform.position, m_MoveToObjectDuration);
+            playerObject.transform.DORotate(new Vector3(0, m_RotattionInZValue, 0), m_RotationDuration);
+            playerObject.transform.DOScale(scale, m_ScaleToZeroDuration);
         }
         
     }
@@ -257,12 +272,20 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
             m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerCreateObject));
             m_AmountOfCube--;
 
-            GameObject playerObject = Instantiate(m_CubeGO, Wallspawner.position, Quaternion.identity);
-            playerObject.transform.parent = Wallspawner;
+            GameObject playerObject = Instantiate(m_CubeGO, transform.position, Quaternion.identity);
+            Vector3 scale = playerObject.transform.localScale;
+            playerObject.transform.localScale = Vector3.zero;
+            playerObject.transform.parent = Objectspawner;
+            
+
             playerObject.GetComponent<BoxCollider>().isTrigger = true;
             m_GameManager.NewObjectAppear(playerObject.GetComponent<BoxBehaviours>());
 
             m_GameManager.PlayerPickAnObject(playerObject, m_AmountOfCube);
+
+            playerObject.transform.DOMove(Objectspawner.transform.position, m_MoveToObjectDuration);
+            playerObject.transform.DORotate(new Vector3(0, m_RotattionInZValue, 0), m_RotationDuration);
+            playerObject.transform.DOScale(scale, m_ScaleToZeroDuration);
         }
         
     }
@@ -274,12 +297,20 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
             m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerCreateObject));
             m_AmountOfPlatform--;
 
-            GameObject playerObject = Instantiate(m_PlatformGO, Wallspawner.position, Quaternion.identity);
-            playerObject.transform.parent = Wallspawner;
+            GameObject playerObject = Instantiate(m_PlatformGO, Objectspawner.position, Quaternion.identity);
+            Vector3 scale = playerObject.transform.localScale;
+            playerObject.transform.localScale = Vector3.zero;
+            playerObject.transform.parent = Objectspawner;
+
             playerObject.GetComponent<BoxCollider>().isTrigger = true;
+
             m_GameManager.NewObjectAppear(playerObject.GetComponent<PlatformBehaviours>());
 
             m_GameManager.PlayerPickAnObject(playerObject, m_AmountOfPlatform);
+
+            playerObject.transform.DOMove(Objectspawner.transform.position, m_MoveToObjectDuration);
+            playerObject.transform.DORotate(new Vector3(0, m_RotattionInZValue, 0), m_RotationDuration);
+            playerObject.transform.DOScale(scale, m_ScaleToZeroDuration);
         }
 
     }

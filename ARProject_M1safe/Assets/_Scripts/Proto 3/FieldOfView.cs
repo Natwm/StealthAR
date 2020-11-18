@@ -44,15 +44,22 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] private Color m_ActionColor;
     #endregion
 
+
+
     #region UPDATE | FIXEDUPDATE | LATEUPDATE
-    private void Start()
+
+    private void Awake()
     {
-        fovMat = transform.GetChild(0).GetComponent<Renderer>().material;
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
 
         viewMeshFilter.mesh = viewMesh;
+        fovMat = transform.GetComponentInChildren<Renderer>().material;
+    }
 
+    private void Start()
+    {
+        
         StartCoroutine("FindTargetsWithDelay", delay);
         //StartCoroutine("DestroyPlayerWithDelay", delay + shiftDelay);
     }  
