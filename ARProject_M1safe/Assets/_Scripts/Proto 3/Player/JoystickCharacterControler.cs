@@ -93,6 +93,9 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     [SerializeField] float m_RotationDuration = 1f;
     [SerializeField] float m_ScaleToZeroDuration = 0.7f;
 
+    [Space]
+    [Header("Flag")]
+    [SerializeField] private bool isCinema = false;
 
     private Vector3 m_StartScale;
 
@@ -102,6 +105,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     public GameObject DeathEffect { get => m_DeathEffect; set => m_DeathEffect = value; }
     public Vector3 StartScale { get => m_StartScale; set => m_StartScale = value; }
     public int LifePoint { get => m_LifePoint; set => m_LifePoint = value; }
+    public bool IsCinema { get => isCinema; set => isCinema = value; }
 
 
     //Sequence m_CollectSequence = DOTween.Sequence();
@@ -121,10 +125,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Kill();
-        }
+        if(isGrounded && !IsCinema)
             TpsMove();
     }
 
@@ -152,15 +153,30 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
         float moveHorizontal = joystick.Horizontal;
 
         Vector3 mouvement = new Vector3(moveHorizontal, 0, moveVertical).normalized;//(transform.right * moveHorizontal + transform.forward * moveVertical) * speedMouvement;
+
+        Debug.Log(moveHorizontal + "  " + moveVertical);
         
         if (mouvement.magnitude >= 0.1f)
         {
-            //m_GameManger.PlaySound(Sound.m_SoundName.PlayerMovement);
-            
-            //m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerMovement));
-            
-            
             m_Animator.SetBool("IsWalking", true);
+            //m_GameManger.PlaySound(Sound.m_SoundName.PlayerMovement);
+
+            //m_AudioSource.PlayOneShot(SetSound(Sound.m_SoundName.PlayerMovement));
+
+            if (moveVertical >= 0.65f || moveHorizontal >= 0.65f || moveVertical <= -0.65f || moveHorizontal <= -0.65f)
+            {
+                Debug.Log("run");
+                m_Animator.SetBool("IsRunning", true);
+            }
+            else
+            {
+                Debug.Log("Walk");
+                m_Animator.SetBool("IsRunning", false);
+            }
+                
+
+            Debug.Log(m_Animator.GetBool("IsRunning"));
+
             float targetAngle = Mathf.Atan2(mouvement.x, mouvement.z) * Mathf.Rad2Deg + cam.gameObject.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnShmoothVelocity, turnShmoothTime);
 
@@ -173,6 +189,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
         else
         {
             m_Animator.SetBool("IsWalking", false);
+            m_Animator.SetBool("IsRunning", false);
         }
 
         if (isGrounded)

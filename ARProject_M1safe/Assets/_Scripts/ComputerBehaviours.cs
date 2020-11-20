@@ -23,4 +23,9 @@ public class ComputerBehaviours : MonoBehaviour, IActionableObjects
         m_GameManager.NewDialogue(dialogue);
     }
     #endregion
+
+    void NextDialogue()
+    {
+        //affiche le nouveau dialogue
+    }
 }

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1109351795609056028}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 1109351796109206031}
   m_RootOrder: 0
@@ -4781,7 +4781,7 @@ Transform:
   m_GameObject: {fileID: 1109351795754727749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1109351796109206031}
   m_RootOrder: 1
@@ -9527,7 +9527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1109351796109206031}
   m_Layer: 0
-  m_Name: Orbe_electric
+  m_Name: Portail_Croiseur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9542,7 +9542,7 @@ Transform:
   m_GameObject: {fileID: 1109351796109206016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1109351795609056027}
   - {fileID: 1109351795754727748}
@@ -9577,7 +9577,7 @@ Transform:
   m_GameObject: {fileID: 1109351796242511832}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 1109351796109206031}
   m_RootOrder: 2

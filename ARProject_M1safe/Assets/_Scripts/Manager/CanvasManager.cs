@@ -35,6 +35,8 @@ public class CanvasManager : MonoBehaviour
 
     [Header("Text Dialogue")]
     public TMP_Text dialogueText;
+    public TMP_Text dialogueName;
+    public Sprite imageSpeaker;
 
     [Space]
     [Header("Inventory Info")]
@@ -77,8 +79,16 @@ public class CanvasManager : MonoBehaviour
     #region Dialogues
     public void UpdateDialogueText(string sentences)
     {
-        m_DialoguePanel.SetActive(true);
+        if(!m_DialoguePanel.active)
+            m_DialoguePanel.SetActive(true);
         dialogueText.text = sentences;
+    }
+
+    public void UpdateDialogueName(string sentences)
+    {
+        if (!m_DialoguePanel.active)
+            m_DialoguePanel.SetActive(true);
+        dialogueName.text = sentences;
     }
 
     public void ClearTextField()

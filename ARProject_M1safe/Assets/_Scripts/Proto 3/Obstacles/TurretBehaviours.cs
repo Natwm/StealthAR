@@ -55,7 +55,12 @@ public class TurretBehaviours : MonoBehaviour
     private Vector3 targetPosition;
     private Quaternion TargetRotation = Quaternion.identity;
 
-    private bool canTurn = true;
+    [Space]
+    [Header("Flag")]
+    [SerializeField] private bool isCinema = false;
+    [SerializeField] private bool canTurn = true;
+
+    public bool IsCinema { get => isCinema; set => isCinema = value; }
 
     // Start is called before the first frame update
 
@@ -70,7 +75,6 @@ public class TurretBehaviours : MonoBehaviour
         m_Animator = transform.GetChild(2).GetComponent<Animator>();
 
         m_status = Status.NORMAL;
-        Debug.Break();
         m_TurretFOV.ChangeColor(m_status);
 
         if (!isStatic)
@@ -89,9 +93,13 @@ public class TurretBehaviours : MonoBehaviour
     {
         /*if (!canTurn && m_TurretFOV.VisibleGameobject.Count <= 0)
             canTurn = true;*/
+        if (!isCinema)
+        {
+            TurretMovement();
 
-        TurretMovement();
-        CanShootOnObject();
+            CanShootOnObject();
+        }
+            
 
         /**/
     }
@@ -214,7 +222,7 @@ public class TurretBehaviours : MonoBehaviour
 
     }
 
-    void CalculeRotation(Vector3 position)
+    public void CalculeRotation(Vector3 position)
     {
         if(TargetRotation == Quaternion.identity)
             TargetRotation = Quaternion.LookRotation(position - transform.position);

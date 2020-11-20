@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("the dialogue is empty");
             return;
         }
-
+        uiManager.UpdateDialogueName(dialogue.name);
         StartCoroutine(DialogueEvent());
     }
 
