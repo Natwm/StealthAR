@@ -29,29 +29,36 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         uiManager.UpdateDialogueName(dialogue.name);
-        StartCoroutine(DialogueEvent());
+        StartCoroutine(DialogueEvent(dialogue));
     }
 
-
-    public IEnumerator DialogueEvent()
+    public void StopDialogue()
     {
-        Debug.Log("DialogueEvent");
-        while (sentences.Count != 0)
-        {
-            StartCoroutine(DisplayText(sentences.Dequeue()));
-            yield return new WaitForSeconds(5);
-
-        }
         EndDialogue();
     }
 
-    IEnumerator DisplayText(string text)
+
+    public IEnumerator DialogueEvent(Dialogues dialogue)
+    {
+        EndDialogue();
+        Debug.Log("DialogueEvent");
+        while (sentences.Count != 0)
+        {
+            StartCoroutine(DisplayText(sentences.Dequeue(), dialogue.image));
+            yield return new WaitForSeconds(5);
+
+        }
+        
+    }
+
+    IEnumerator DisplayText(string text, Sprite speakerImage)
     {
         string newText = "";
         foreach (char letter in text)
         {
             newText += letter;
             uiManager.UpdateDialogueText(newText);
+            uiManager.UpdateUIImages(speakerImage);
             yield return new WaitForSeconds(.05f);
         }
     }

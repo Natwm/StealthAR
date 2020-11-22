@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
         m_DialogueManager.Conversation(dialogue);
     }
 
+    public void StopDialogue()
+    {
+        m_DialogueManager.StopDialogue();
+    }
+
     public IEnumerator playerGetKilled(GameObject player) {
         JoystickCharacterControler controller = player.GetComponent<JoystickCharacterControler>();
 

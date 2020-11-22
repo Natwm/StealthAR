@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Cinema : MonoBehaviour
 {
@@ -88,9 +89,11 @@ public class Cinema : MonoBehaviour
 
     void turn()
     {
+        Vector3 pos = new Vector3 (spaceShipPos.transform.position.x, spaceShipPos.transform.position.y,0);
         foreach (var item in listTurret)
         {
-            item.transform.rotation = Quaternion.LookRotation(spaceShipPos.transform.position);//LookAt(spaceShipPos.transform);
+            //item.transform.rotation = Quaternion.LookRotation(spaceShipPos.transform.position);//LookAt(spaceShipPos.transform);
+            item.transform.DORotate(pos, 1f);
         }
     }
 

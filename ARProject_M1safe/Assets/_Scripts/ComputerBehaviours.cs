@@ -7,7 +7,9 @@ public class ComputerBehaviours : MonoBehaviour, IActionableObjects
     [SerializeField] private GameManager m_GameManager;
 
     [Header("Text")]
-    [SerializeField] private Dialogues dialogue;
+    [SerializeField] private Dialogues[] dialogue;
+
+    [SerializeField] private int index = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +21,18 @@ public class ComputerBehaviours : MonoBehaviour, IActionableObjects
     public void Interaction()
     {
         Debug.Log("Interact");
-        Debug.Log(dialogue.sentences[0]);
-        m_GameManager.NewDialogue(dialogue);
+
+        if (index >= dialogue.Length)
+            m_GameManager.StopDialogue();
+        else
+            m_GameManager.NewDialogue(dialogue[index]);
     }
     #endregion
 
-    void NextDialogue()
+    public void NextDialogue()
     {
         //affiche le nouveau dialogue
+        index++;
+        Interaction();
     }
 }

@@ -36,7 +36,7 @@ public class CanvasManager : MonoBehaviour
     [Header("Text Dialogue")]
     public TMP_Text dialogueText;
     public TMP_Text dialogueName;
-    public Sprite imageSpeaker;
+    public Image imageSpeaker;
 
     [Space]
     [Header("Inventory Info")]
@@ -72,6 +72,9 @@ public class CanvasManager : MonoBehaviour
         {
             m_ValidationSpawnPanel.SetActive(false);
         }
+
+        if (m_DialoguePanel.active)
+            m_DialoguePanel.SetActive(false);
     }
 
     //void SetUpNewPlayer();
@@ -81,7 +84,14 @@ public class CanvasManager : MonoBehaviour
     {
         if(!m_DialoguePanel.active)
             m_DialoguePanel.SetActive(true);
+
+        //imageSpeaker.sprite = 
         dialogueText.text = sentences;
+    }
+
+    public void UpdateUIImages(Sprite speaker)
+    {
+        imageSpeaker.sprite = speaker;
     }
 
     public void UpdateDialogueName(string sentences)
