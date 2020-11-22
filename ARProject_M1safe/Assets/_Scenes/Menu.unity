@@ -4663,6 +4663,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 618695427}
     m_Modifications:
+    - target: {fileID: 1651832315, guid: 245bb29184f3b5a4496810e3b55af844, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7258067454166842357, guid: 245bb29184f3b5a4496810e3b55af844,
         type: 3}
       propertyPath: m_Enabled
@@ -4752,6 +4756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: interactLayer.m_Bits
       value: 3072
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245bb29184f3b5a4496810e3b55af844, type: 3}
