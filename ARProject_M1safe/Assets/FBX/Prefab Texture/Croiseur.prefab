@@ -3410,6 +3410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timetoscale: 1
+  ExplosionParticule: {fileID: 6527326849892326855, guid: 8ad24515c55d81e47b3e9deb0ea3e277,
+    type: 3}
   particule:
   - {fileID: 4834760219816719432}
   - {fileID: 8165520096036540824}
@@ -3429,7 +3431,7 @@ PrefabInstance:
     - target: {fileID: 2991800689883723988, guid: 75d6046e4754c46429574f5672f785d9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.00800003
       objectReference: {fileID: 0}
     - target: {fileID: 2991800689883723988, guid: 75d6046e4754c46429574f5672f785d9,
         type: 3}
@@ -3484,7 +3486,7 @@ PrefabInstance:
     - target: {fileID: 2991800689883723988, guid: 75d6046e4754c46429574f5672f785d9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.35
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2991800689883723988, guid: 75d6046e4754c46429574f5672f785d9,
         type: 3}
@@ -3494,7 +3496,7 @@ PrefabInstance:
     - target: {fileID: 2991800689883723988, guid: 75d6046e4754c46429574f5672f785d9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.66
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4879080027437665307, guid: 75d6046e4754c46429574f5672f785d9,
         type: 3}

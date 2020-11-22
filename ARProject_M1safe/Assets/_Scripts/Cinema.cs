@@ -27,6 +27,8 @@ public class Cinema : MonoBehaviour
     bool stop = false;
     bool can = false;
     float timer = 5f;
+
+    float timerAttaque = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,13 +58,7 @@ public class Cinema : MonoBehaviour
             {
                 if (timer <= 0)
                 {
-                    spaceShipScene.GetComponent<shittyScale>().attaque(listTurret);
-                    foreach (var item in listTurret)
-                    {
-                        Instantiate(ExplosionParticule, item.transform.position, Quaternion.identity);
-                        Destroy(item.gameObject);
-                        GameManager.PlaySoundStatic(Sound.m_SoundName.PlayerDied);
-                    }
+                    StartCoroutine(spaceShipScene.GetComponent<shittyScale>().attaque(listTurret));
                 }
                 else
                     timer -= Time.deltaTime;
