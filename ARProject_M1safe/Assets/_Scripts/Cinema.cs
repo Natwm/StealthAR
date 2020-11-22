@@ -5,9 +5,9 @@ using UnityEngine;
 public class Cinema : MonoBehaviour
 {
     [SerializeField] JoystickCharacterControler player;
-    [SerializeField] GameObject turretstatic;
+    //[SerializeField] GameObject turretstatic;
     [SerializeField] GameObject movingTurret;
-    [SerializeField] GameObject turretinPlay;
+    //[SerializeField] GameObject turretinPlay;
     [SerializeField] GameObject canvas;
 
     [SerializeField] Transform[] spawnPoints;
@@ -29,7 +29,8 @@ public class Cinema : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<JoystickCharacterControler>();
+        canvas = FindObjectOfType<CanvasManager>().gameObject;
     }
 
     // Update is called once per frame
@@ -74,6 +75,9 @@ public class Cinema : MonoBehaviour
     void cinema()
     {
         player.IsCinema = true;
+        player.Animator.SetBool("IsWalking", false);
+        player.Animator.SetBool("IsRunning", false);
+
         canvas.SetActive(false);
         //SpawnTurret();
         SpawnTurret();

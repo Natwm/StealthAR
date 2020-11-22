@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -20,10 +21,17 @@ public class shittyScale : MonoBehaviour
 
     public void attaque(List<TurretBehaviours> cible)
     {
-        for (int i = 0; i < cible.Count; i++)
+        try
         {
-            particule[i].transform.LookAt(cible[i].transform);
-            particule[i].GetComponent<ParticleSystem>().Play();
+            for (int i = 0; i < cible.Count; i++)
+            {
+                particule[i].transform.LookAt(cible[i].transform);
+                particule[i].GetComponent<ParticleSystem>().Play();
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Impossible");
         }
         
     }

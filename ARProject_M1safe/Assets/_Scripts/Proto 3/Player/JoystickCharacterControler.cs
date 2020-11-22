@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 {
+    #region Param
     [SerializeField] private GameManager m_GameManager;
 
     [Header("Animator")]
@@ -99,17 +100,9 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
 
     private Vector3 m_StartScale;
 
+    #endregion
 
-    public GameObject Visuel { get => m_Visuel; set => m_Visuel = value; }
-    public ParticleSystem SpawnEffect { get => m_SpawnEffect; set => m_SpawnEffect = value; }
-    public GameObject DeathEffect { get => m_DeathEffect; set => m_DeathEffect = value; }
-    public Vector3 StartScale { get => m_StartScale; set => m_StartScale = value; }
-    public int LifePoint { get => m_LifePoint; set => m_LifePoint = value; }
-    public bool IsCinema { get => isCinema; set => isCinema = value; }
-
-
-    //Sequence m_CollectSequence = DOTween.Sequence();
-
+    #region FIXEUPDATE || UPDATE || LATEUPDATE || START
     void Start()
     {
         //cam = Camera.main; 
@@ -133,6 +126,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         physicsCheck();
     }
+    #endregion
 
     AudioClip SetSound(Sound.m_SoundName name)
     {
@@ -338,8 +332,6 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     }
     #endregion
 
-    
-
     #region Physics
     private void physicsCheck()
     {
@@ -364,8 +356,6 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
         }
     }
     #endregion
-
-
 
     #region Interface
     public void Damage(int damageTake)
@@ -398,6 +388,15 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
             Destroy(gameObject);
         }
     }
+
+    public GameObject Visuel { get => m_Visuel; set => m_Visuel = value; }
+    public ParticleSystem SpawnEffect { get => m_SpawnEffect; set => m_SpawnEffect = value; }
+    public GameObject DeathEffect { get => m_DeathEffect; set => m_DeathEffect = value; }
+    public Vector3 StartScale { get => m_StartScale; set => m_StartScale = value; }
+    public int LifePoint { get => m_LifePoint; set => m_LifePoint = value; }
+    public bool IsCinema { get => isCinema; set => isCinema = value; }
+    public Animator Animator { get => m_Animator; set => m_Animator = value; }
+
     #endregion
 
     #region Gizmo
