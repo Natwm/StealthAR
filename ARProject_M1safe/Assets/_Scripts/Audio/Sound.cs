@@ -26,6 +26,7 @@ public class Sound
         Explosion,
         Propulsion,
         UI,
+        UiText,
         CloseDoor
     }
 

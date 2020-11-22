@@ -51,30 +51,11 @@ public class CanvasManager : MonoBehaviour
         m_AmountOfWall.text = "0";
         m_AmountOfPlatform.text = "0";
 
-        m_JumpButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Jump);
-        m_UseButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Interaction);
-        
-        m_SpawnButtonWall.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnWall);
-        m_SpawnButtonPlatform.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnPlatform);
-        m_SpawnButtonCube.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnCube);
 
-        if (m_SettingsPanel.active)
-        {
-            m_SettingsPanel.SetActive(false);
-        }
+        SetupPanel();
 
-        if (m_GameOverPanel.active)
-        {
-            m_GameOverPanel.SetActive(false);
-        }
 
-        if (m_ValidationSpawnPanel.active)
-        {
-            m_ValidationSpawnPanel.SetActive(false);
-        }
-
-        if (m_DialoguePanel.active)
-            m_DialoguePanel.SetActive(false);
+        SetUpButton();
     }
 
     //void SetUpNewPlayer();
@@ -85,7 +66,7 @@ public class CanvasManager : MonoBehaviour
         if(!m_DialoguePanel.active)
             m_DialoguePanel.SetActive(true);
 
-        //imageSpeaker.sprite = 
+        GameManager.PlaySoundStatic(Sound.m_SoundName.UiText); 
         dialogueText.text = sentences;
     }
 
@@ -211,4 +192,51 @@ public class CanvasManager : MonoBehaviour
     {
         GameManager.PlaySoundStatic(Sound.m_SoundName.UI);
     }
+
+
+    #region UI setUp
+    void SetUpButton()
+    {
+        m_JumpButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Jump);
+        m_UseButton.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().Interaction);
+
+        m_SpawnButtonWall.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnWall);
+        m_SpawnButtonPlatform.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnPlatform);
+        m_SpawnButtonCube.onClick.AddListener(GameObject.FindObjectOfType<JoystickCharacterControler>().SpawnCube);
+
+        m_ExitButton.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_ExitConfirmeButton.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_ExitUnconfirmeButton.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_JumpButton.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_ResumeButton.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_RotateObjectButton.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_SpawnButtonCube.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_SpawnButtonPlatform.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_SpawnButtonWall.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_UseButton.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+        m_ValidationButton.onClick.AddListener(GameManager.FindObjectOfType<SoundManager>().PlayUIsound);
+    }
+
+    void SetupPanel()
+    {
+        if (m_SettingsPanel.active)
+        {
+            m_SettingsPanel.SetActive(false);
+        }
+
+        if (m_GameOverPanel.active)
+        {
+            m_GameOverPanel.SetActive(false);
+        }
+
+        if (m_ValidationSpawnPanel.active)
+        {
+            m_ValidationSpawnPanel.SetActive(false);
+        }
+
+        if (m_DialoguePanel.active)
+            m_DialoguePanel.SetActive(false);
+    }
+    #endregion
+
 }

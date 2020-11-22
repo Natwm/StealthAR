@@ -120,6 +120,8 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     {
         if(isGrounded && !IsCinema)
             TpsMove();
+        velocity.y += gravity * Time.deltaTime;
+        characterController.Move(velocity * Time.deltaTime);
     }
 
     private void FixedUpdate()
@@ -185,14 +187,6 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
             m_Animator.SetBool("IsWalking", false);
             m_Animator.SetBool("IsRunning", false);
         }
-
-        if (isGrounded)
-        {
-            //m_Animator.SetBool("IsJumping", false);
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-        characterController.Move(velocity * Time.deltaTime);
     }
 
     public void Jump()

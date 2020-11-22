@@ -23,7 +23,10 @@ public class ComputerBehaviours : MonoBehaviour, IActionableObjects
         Debug.Log("Interact");
 
         if (index >= dialogue.Length)
+        {
             m_GameManager.StopDialogue();
+            index = 0;
+        }
         else
             m_GameManager.NewDialogue(dialogue[index]);
     }
