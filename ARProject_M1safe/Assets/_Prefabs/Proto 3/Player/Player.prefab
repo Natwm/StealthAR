@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416361484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 2}
+  m_LocalPosition: {x: 0, y: 0.825, z: 2.075}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7258067454166842359}
@@ -172,14 +172,14 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 272
-  groundDistance: 0.2
+  groundDistance: 0.5
   isGrounded: 0
   velocity: {x: 0, y: 0, z: 0}
   speedMouvement: 5
   m_JumpPower: 3
   gravity: -9.81
   joystick: {fileID: 0}
-  Wallspawner: {fileID: 416361485}
+  Objectspawner: {fileID: 416361485}
   m_AmountOfWall: 0
   m_AmountOfPlatform: 0
   m_AmountOfCube: 1
@@ -200,6 +200,11 @@ MonoBehaviour:
   m_DeathEffect: {fileID: 6527326849892326855, guid: 8ad24515c55d81e47b3e9deb0ea3e277,
     type: 3}
   m_AudioSource: {fileID: 0}
+  m_RotattionInZValue: -180
+  m_MoveToObjectDuration: 0.7
+  m_RotationDuration: 0.7
+  m_ScaleToZeroDuration: 0.7
+  isCinema: 0
 --- !u!114 &1651832315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7258067455504135173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.050000012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7258067454166842359}
