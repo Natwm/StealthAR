@@ -81,6 +81,13 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<SoundManager>().PlaySound(name);
     }
 
+    public static void PlaySoundOneShotStatic(Sound.m_SoundName name)
+    {
+        FindObjectOfType<SoundManager>().PlaySoundOneShot(name);
+    }
+
+    
+
     public Sound GetSound(Sound.m_SoundName name)
     {
         return m_SoundManager.GetSound(name);

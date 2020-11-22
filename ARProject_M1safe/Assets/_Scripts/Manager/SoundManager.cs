@@ -49,6 +49,18 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlaySoundOneShot(Sound.m_SoundName name)
+    {
+        foreach (Sound audio in m_Sounds)
+        {
+            if (audio.Name == name)
+            {
+                audio.SourceSound.PlayOneShot(audio.SourceSound.clip);
+                Debug.Log("Can");
+            }
+        }
+    }
+
     public void PlayUIsound()
     {
         foreach(Sound audio in m_Sounds)

@@ -59,6 +59,7 @@ public class TurretBehaviours : MonoBehaviour
     [Header("Flag")]
     [SerializeField] private bool isCinema = false;
     [SerializeField] private bool canTurn = true;
+    [SerializeField] private bool detection = false;
 
     public bool IsCinema { get => isCinema; set => isCinema = value; }
 
@@ -129,6 +130,12 @@ public class TurretBehaviours : MonoBehaviour
     {
         if (m_TurretFOV.VisibleGameobject.Count > 0)
         {
+            if(detection == false)
+            {
+                detection = true;
+                GameManager.PlaySoundOneShotStatic(Sound.m_SoundName.TurretDetection);
+            }
+                
             m_Animator.SetBool("stop", true);
             canTurn = false;
             FindTarget();
@@ -139,10 +146,12 @@ public class TurretBehaviours : MonoBehaviour
             m_Animator.SetBool("stop", false);
             m_status = Status.PATROL;
             m_TurretFOV.ChangeColor(m_status);
+            detection = false;
             GoToplayerLastPosition();
         }
         else
         {
+            detection = false;
             m_status = Status.NORMAL;
             m_TurretFOV.ChangeColor(m_status);
         }
