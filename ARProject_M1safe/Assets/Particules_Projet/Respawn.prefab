@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8970400266468737444}
   - component: {fileID: 8962093215808471236}
   - component: {fileID: 9073052077270656350}
-  - component: {fileID: 9051162843636777682}
   m_Layer: 0
   m_Name: Respawn
   m_TagString: Untagged
@@ -91,48 +90,10 @@ SphereCollider:
   m_GameObject: {fileID: 8938586553750208570}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9051162843636777682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8938586553750208570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 585901dad4c09564db67dc1e08787f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnEffectTime: 3
-  pause: 1
-  fadeIn:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.2
-      inSlope: 0.23117824
-      outSlope: 0.23117824
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.15789473
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.1187649
-      outSlope: 0.1187649
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.28173375
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &6312361197839353173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +101,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8942992867807897504}
     m_Modifications:
+    - target: {fileID: 2976913446729606075, guid: 893121f6cdfe59a499317ca55ce14835,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977211784298063405, guid: 893121f6cdfe59a499317ca55ce14835,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3134638312674875543, guid: 893121f6cdfe59a499317ca55ce14835,
         type: 3}
       propertyPath: m_LocalPosition.x

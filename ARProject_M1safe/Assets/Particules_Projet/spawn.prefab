@@ -4694,7 +4694,7 @@ GameObject:
   - component: {fileID: 2976913446729606075}
   - component: {fileID: 2977997346477068747}
   m_Layer: 0
-  m_Name: Rings
+  m_Name: spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4709,7 +4709,7 @@ Transform:
   m_GameObject: {fileID: 3139965104038097643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
   m_Children:
   - {fileID: 3134745278143193965}
   - {fileID: 3134708299814007903}

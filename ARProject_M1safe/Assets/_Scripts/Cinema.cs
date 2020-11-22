@@ -21,6 +21,7 @@ public class Cinema : MonoBehaviour
 
 
     [SerializeField] GameObject ExplosionParticule;
+    [SerializeField] GameObject spawnParticule;
 
     GameObject spaceShipScene;
 
@@ -97,9 +98,18 @@ public class Cinema : MonoBehaviour
     {
         foreach (var item in spawnPoints)
         {
+            Vector3 scaleUnit;
             GameObject turretMove = Instantiate(movingTurret, item.position, Quaternion.identity);
+            scaleUnit = turretMove.transform.localScale;
+            turretMove.transform.localScale = Vector3.zero;
+            turretMove.transform.DOScale(scaleUnit, 1f);
+            GameObject effect = Instantiate(spawnParticule, turretMove.transform.position, Quaternion.identity);
             turretMove.GetComponentInChildren<Animator>().enabled = false;
+
+            Destroy(effect, 1.1f);
+
             turretMove.transform.LookAt(player.transform);
+            //turretMove.transform.rotation = new Quaternion(0, -turretMove.transform.rotation.y, 0, 0);
             turretMove.GetComponent<TurretBehaviours>().IsCinema = true;
             listTurret.Add(turretMove.GetComponent<TurretBehaviours>());
         }
