@@ -86,7 +86,7 @@ MonoBehaviour:
     m_Pitch: 1.06
     m_Loop: 0
     m_PlayOnAwake: 0
-  - name: 20
+  - name: 21
     m_Clip: {fileID: 8300000, guid: a570a6b9b3204154990990b4b582a717, type: 3}
     m_Volume: 0.06
     m_Pitch: 1.1
@@ -164,9 +164,9 @@ MonoBehaviour:
     m_Pitch: 0
     m_Loop: 0
     m_PlayOnAwake: 0
-  - name: 0
-    m_Clip: {fileID: 0}
-    m_Volume: 0
-    m_Pitch: 0
+  - name: 20
+    m_Clip: {fileID: 8300000, guid: 3dbe6d82ce17bb54f9a8588ddc33373a, type: 3}
+    m_Volume: 0.188
+    m_Pitch: 1.429
     m_Loop: 0
     m_PlayOnAwake: 0
