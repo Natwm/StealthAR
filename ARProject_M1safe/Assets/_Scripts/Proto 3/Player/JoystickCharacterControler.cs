@@ -118,7 +118,7 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
     // Update is called once per frame
     void Update()
     {
-        if(isGrounded && !IsCinema)
+        if(!IsCinema)
             TpsMove();
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);

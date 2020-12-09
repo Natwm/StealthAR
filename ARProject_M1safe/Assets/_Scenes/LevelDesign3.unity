@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 23462709}
   - component: {fileID: 23462708}
   - component: {fileID: 23462710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane.010 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2494,7 +2494,7 @@ GameObject:
   - component: {fileID: 145670235}
   - component: {fileID: 145670234}
   - component: {fileID: 145670236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane.010 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4021,7 +4021,7 @@ GameObject:
   - component: {fileID: 198432727}
   - component: {fileID: 198432726}
   - component: {fileID: 198432728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane.010 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4115,7 +4115,7 @@ GameObject:
   - component: {fileID: 214573901}
   - component: {fileID: 214573900}
   - component: {fileID: 214573902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane.010 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7333,11 +7333,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1052556139}
     m_Modifications:
-    - target: {fileID: 3737804575115509060, guid: 9310314f833c4bd4895ae053626f7990,
-        type: 3}
-      propertyPath: m_OpenWall.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3737804575115509060, guid: 9310314f833c4bd4895ae053626f7990,
         type: 3}
       propertyPath: m_OpenWall.Array.data[0]
@@ -12734,11 +12729,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
         type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
-        type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1884955054}
@@ -12756,46 +12746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8d2733652511d4cb85c3b5e1fa13c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &785096636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2635059538077148537, guid: 245bb29184f3b5a4496810e3b55af844,
-    type: 3}
-  m_PrefabInstance: {fileID: 785096634}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &785096637 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8391863367079912469, guid: 245bb29184f3b5a4496810e3b55af844,
-    type: 3}
-  m_PrefabInstance: {fileID: 785096634}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &785096638
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785096636}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!64 &785096639
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785096637}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1001 &786604095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24506,6 +24456,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mur (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3470264571735141129, guid: 70033dc9679c8dc49be35fdd2cbee9af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4279276790349115827, guid: 70033dc9679c8dc49be35fdd2cbee9af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24560,6 +24515,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517573028406355465, guid: 70033dc9679c8dc49be35fdd2cbee9af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70033dc9679c8dc49be35fdd2cbee9af, type: 3}
@@ -25762,7 +25722,7 @@ GameObject:
   - component: {fileID: 1565480052}
   - component: {fileID: 1565480051}
   - component: {fileID: 1565480053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane.010 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31835,7 +31795,7 @@ GameObject:
   - component: {fileID: 2007763561}
   - component: {fileID: 2007763560}
   - component: {fileID: 2007763562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane.010 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
