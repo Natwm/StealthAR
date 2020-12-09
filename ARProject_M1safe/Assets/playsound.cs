@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class playsound : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void PlaySoundStep()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameManager.PlaySoundOneShotStatic(Sound.m_SoundName.PlayerMovement);
     }
 }
