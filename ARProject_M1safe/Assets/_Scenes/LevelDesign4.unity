@@ -10341,7 +10341,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 716069417}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &704201035
+--- !u!114 &704201037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10652,7 +10652,7 @@ PrefabInstance:
     - target: {fileID: 7258067454166842359, guid: 245bb29184f3b5a4496810e3b55af844,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.637066
+      value: -13.74
       objectReference: {fileID: 0}
     - target: {fileID: 7258067454166842359, guid: 245bb29184f3b5a4496810e3b55af844,
         type: 3}
@@ -10662,7 +10662,7 @@ PrefabInstance:
     - target: {fileID: 7258067454166842359, guid: 245bb29184f3b5a4496810e3b55af844,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.697136
+      value: 6.76
       objectReference: {fileID: 0}
     - target: {fileID: 7258067454166842359, guid: 245bb29184f3b5a4496810e3b55af844,
         type: 3}
@@ -12786,6 +12786,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionPlatform.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737804575115509060, guid: 9310314f833c4bd4895ae053626f7990,
+        type: 3}
+      propertyPath: m_OpenWall.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3737804575115509060, guid: 9310314f833c4bd4895ae053626f7990,
         type: 3}
@@ -17334,6 +17339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionPlatform.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737804575115509060, guid: 9310314f833c4bd4895ae053626f7990,
+        type: 3}
+      propertyPath: m_OpenWall.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3737804575115509060, guid: 9310314f833c4bd4895ae053626f7990,
         type: 3}
@@ -31485,6 +31495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionPlatform.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737804575115509060, guid: 9310314f833c4bd4895ae053626f7990,
+        type: 3}
+      propertyPath: m_OpenWall.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3737804575115509060, guid: 9310314f833c4bd4895ae053626f7990,
         type: 3}
