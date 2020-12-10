@@ -64,13 +64,13 @@ MonoBehaviour:
     m_PlayOnAwake: 0
   - name: 15
     m_Clip: {fileID: 8300000, guid: 6e238e7ec2079cc4080691fe473b6544, type: 3}
-    m_Volume: 0.09
+    m_Volume: 0.171
     m_Pitch: 1.09
     m_Loop: 0
     m_PlayOnAwake: 0
   - name: 9
     m_Clip: {fileID: 8300000, guid: 7df86b3f79f579346813b39fc899e013, type: 3}
-    m_Volume: 0.2
+    m_Volume: 0.1
     m_Pitch: 1.27
     m_Loop: 0
     m_PlayOnAwake: 0
@@ -100,19 +100,19 @@ MonoBehaviour:
     m_PlayOnAwake: 0
   - name: 5
     m_Clip: {fileID: 8300000, guid: 9adae3585718946458d4bcb9ec2234a8, type: 3}
-    m_Volume: 0.06
+    m_Volume: 0.1
     m_Pitch: 1.03
     m_Loop: 0
     m_PlayOnAwake: 0
   - name: 8
     m_Clip: {fileID: 8300000, guid: ca0cfa1f9a4acae4faba91613f4b33b6, type: 3}
-    m_Volume: 0.13
+    m_Volume: 0.06
     m_Pitch: 1.15
     m_Loop: 0
     m_PlayOnAwake: 0
   - name: 2
     m_Clip: {fileID: 8300000, guid: 10a2f16185f45f74492f0bc216e5d14c, type: 3}
-    m_Volume: 0.09
+    m_Volume: 0.2
     m_Pitch: 1.06
     m_Loop: 0
     m_PlayOnAwake: 0
@@ -124,13 +124,13 @@ MonoBehaviour:
     m_PlayOnAwake: 0
   - name: 13
     m_Clip: {fileID: 8300000, guid: bc7990a2f8d23484d9cb2d97c861f009, type: 3}
-    m_Volume: 0.03
+    m_Volume: 0.09
     m_Pitch: 1.12
     m_Loop: 0
     m_PlayOnAwake: 0
   - name: 4
     m_Clip: {fileID: 8300000, guid: fb0c1f1cd1cbdf5478678a06aa09c894, type: 3}
-    m_Volume: 0.06
+    m_Volume: 0.1
     m_Pitch: 1.12
     m_Loop: 0
     m_PlayOnAwake: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
     m_PlayOnAwake: 0
   - name: 3
     m_Clip: {fileID: 8300000, guid: 444452c41b84def45aed3da39fb99f5d, type: 3}
-    m_Volume: 0.03
+    m_Volume: 0.09
     m_Pitch: 1.18
     m_Loop: 0
     m_PlayOnAwake: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
     m_PlayOnAwake: 0
   - name: 20
     m_Clip: {fileID: 8300000, guid: 3dbe6d82ce17bb54f9a8588ddc33373a, type: 3}
-    m_Volume: 0.188
+    m_Volume: 0.15
     m_Pitch: 1.429
     m_Loop: 0
     m_PlayOnAwake: 0
