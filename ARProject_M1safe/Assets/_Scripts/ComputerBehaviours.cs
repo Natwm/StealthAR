@@ -20,6 +20,9 @@ public class ComputerBehaviours : MonoBehaviour, IActionableObjects
     #region Interface
     public void Interaction()
     {
+
+        FindObjectOfType<CanvasManager>().SetDialoqueButton(this);
+
         Debug.Log("Interact");
 
         if (index >= dialogue.Length)

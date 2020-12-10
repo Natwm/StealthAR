@@ -74,4 +74,6 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         CleanTextField();
     }
+
+
 }

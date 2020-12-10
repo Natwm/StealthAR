@@ -26,6 +26,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private Button m_ExitConfirmeButton;
     [SerializeField] private Button m_ExitUnconfirmeButton;
     [SerializeField] private Button m_RotateObjectButton;
+    [SerializeField] private Button m_DialogueButton;
 
     [Space]
     [Header("Settings Buttons")]
@@ -80,6 +81,12 @@ public class CanvasManager : MonoBehaviour
         if (!m_DialoguePanel.active)
             m_DialoguePanel.SetActive(true);
         dialogueName.text = sentences;
+    }
+
+    public void SetDialoqueButton(ComputerBehaviours pc)
+    {
+        m_DialogueButton.onClick.RemoveAllListeners();
+        m_DialogueButton.onClick.AddListener(pc.NextDialogue);
     }
 
     public void ClearTextField()
