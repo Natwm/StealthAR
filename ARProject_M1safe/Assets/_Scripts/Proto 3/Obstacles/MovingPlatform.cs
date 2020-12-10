@@ -23,6 +23,7 @@ public class MovingPlatform : MonoBehaviour
     void Start()
     {
         GameManager.PlaySoundStatic(Sound.m_SoundName.Propulsion);
+        Debug.Log(transform.GetChild(1).name);
         for (int i = 0; i < transform.GetChild(1).childCount; i++)
         {
             m_ListOfPosition.Add(transform.GetChild(1).GetChild(i).transform.position);

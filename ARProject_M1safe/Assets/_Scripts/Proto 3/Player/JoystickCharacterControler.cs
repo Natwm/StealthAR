@@ -149,8 +149,6 @@ public class JoystickCharacterControler : MonoBehaviour, IDamageable<int>
         float moveHorizontal = joystick.Horizontal;
 
         Vector3 mouvement = new Vector3(moveHorizontal, 0, moveVertical).normalized;//(transform.right * moveHorizontal + transform.forward * moveVertical) * speedMouvement;
-
-        Debug.Log(moveHorizontal + "  " + moveVertical);
         
         if (mouvement.magnitude >= 0.1f)
         {

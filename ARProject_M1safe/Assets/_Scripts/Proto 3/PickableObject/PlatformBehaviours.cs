@@ -34,19 +34,21 @@ public class PlatformBehaviours : SpawningObjects, IPickable
         if (other.CompareTag("PlatformSpawn"))
         {
             canPlant = true;
-            GetComponent<Renderer>().material = canPlantMat;
+            //GetComponent<Renderer>().material = canPlantMat;
         }
-        else
+        else if(other.CompareTag("Player"))
         {
+            Debug.Log("blabla pas bon");
             canPlant = false;
-            GetComponent<Renderer>().material = cantPlantMat;
+            //GetComponent<Renderer>().material = cantPlantMat;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("blabla sortie");
         canPlant = false;
-        GetComponent<Renderer>().material = cantPlantMat;
+        //GetComponent<Renderer>().material = cantPlantMat;
     }
     #endregion
 }
