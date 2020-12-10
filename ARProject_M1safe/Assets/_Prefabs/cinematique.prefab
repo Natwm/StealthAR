@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &754533042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754533043}
+  m_Layer: 0
+  m_Name: GameObject (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754533043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754533042}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.95000005, y: 0.7, z: -3.775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4784367860073264852}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3855203466792678176
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +84,7 @@ MonoBehaviour:
   canvas: {fileID: 0}
   spawnPoints:
   - {fileID: 3855203467614552646}
+  - {fileID: 754533043}
   listTurret: []
   spaceShip: {fileID: 8919425262887712004, guid: ccb69f8730a3cae479b915a371b591c1,
     type: 3}
@@ -62,6 +93,8 @@ MonoBehaviour:
   spaceShipPos: {fileID: 3855203467036045531}
   spaceShipParticulePos: {fileID: 3855203467729564689}
   ExplosionParticule: {fileID: 6527326849892326855, guid: 8ad24515c55d81e47b3e9deb0ea3e277,
+    type: 3}
+  spawnParticule: {fileID: 3139965104038097643, guid: 893121f6cdfe59a499317ca55ce14835,
     type: 3}
 --- !u!114 &3855203466792678191
 MonoBehaviour:
@@ -77,10 +110,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GameManager: {fileID: 0}
   dialogue:
-    image: {fileID: 0}
-    name: BITE
-    sentences:
-    - BLABLABLABLABLABLABLABLABLABLAB
+  - image: {fileID: 0}
+    name: 
+    sentences: []
+  - image: {fileID: 0}
+    name: 
+    sentences: []
+  - image: {fileID: 0}
+    name: 
+    sentences: []
+  index: 0
 --- !u!65 &3855203466792678188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -212,6 +251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3855203467614552646}
+  - {fileID: 754533043}
   m_Father: {fileID: 3855203466792678177}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

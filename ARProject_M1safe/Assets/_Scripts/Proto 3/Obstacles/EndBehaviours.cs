@@ -22,7 +22,7 @@ public class EndBehaviours : MonoBehaviour
     private IEnumerator LoadSceneWithNameCore()
     {
         yield return fader.FadOutCore();
-        LevelLoader.LoadLevelByIndex(SceneManager.GetActiveScene().buildIndex);
+        LevelLoader.LoadLevelByIndex(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void OnTriggerEnter(Collider other)
