@@ -39,7 +39,7 @@ public class PlatformBehaviours : SpawningObjects, IPickable
         else if(other.CompareTag("Player"))
         {
             Debug.Log("blabla pas bon");
-            canPlant = false;
+            canPlant = true;
             //GetComponent<Renderer>().material = cantPlantMat;
         }
     }
