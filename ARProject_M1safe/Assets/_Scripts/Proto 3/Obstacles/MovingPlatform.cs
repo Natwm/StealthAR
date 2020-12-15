@@ -14,7 +14,7 @@ public class MovingPlatform : MonoBehaviour
 
     [Space]
     [Header("Movement Param")]
-    [SerializeField] private List<Vector3> m_ListOfPosition;
+    [SerializeField] private List<Transform> m_ListOfPosition;
     [SerializeField] private float m_MovementSpeed;
     public int index = 0;
 
@@ -26,8 +26,9 @@ public class MovingPlatform : MonoBehaviour
         Debug.Log(transform.GetChild(1).name);
         for (int i = 0; i < transform.GetChild(1).childCount; i++)
         {
-            m_ListOfPosition.Add(transform.GetChild(1).GetChild(i).transform.position);
+            m_ListOfPosition.Add(transform.GetChild(1).GetChild(i).transform);
         }
+        transform.GetChild(1).transform.parent = null;
     }
 
     // Update is called once per frame
@@ -35,14 +36,14 @@ public class MovingPlatform : MonoBehaviour
     {
         if(m_MovingState == State.Moving)
         {
-            if (transform.position == m_ListOfPosition[index])
+            if (transform.position == m_ListOfPosition[index].position)
             {
                 index++;
                 if (index >= m_ListOfPosition.Count)
                     index = 0;
 
             }
-            transform.position = Vector3.MoveTowards(transform.position, m_ListOfPosition[index], m_MovementSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, m_ListOfPosition[index].position, m_MovementSpeed * Time.deltaTime);
         }
     }
 
@@ -52,24 +53,36 @@ public class MovingPlatform : MonoBehaviour
 
     #region TRIGGER && COLLIDER
 
-   /* private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("enter");
-            collision.gameObject.transform.parent = this.gameObject.transform;
-        }
-            
-    }
+    /* private void OnCollisionEnter(Collision collision)
+     {
+         if (collision.gameObject.CompareTag("Player"))
+         {
+             Debug.Log("enter");
+             collision.gameObject.transform.parent = this.gameObject.transform;
+         }
 
-    private void OnCollisionExit(Collision collision)
+     }
+
+     private void OnCollisionExit(Collision collision)
+     {
+         if (transform.GetChild(1).gameObject.CompareTag("Player"))
+         {
+             Debug.Log("exit");
+             transform.GetChild(1).parent = null;
+         }
+
+     }*/
+    #endregion
+
+    #region Gizmo
+    private void OnDrawGizmos()
     {
-        if (transform.GetChild(1).gameObject.CompareTag("Player"))
-        {
-            Debug.Log("exit");
-            transform.GetChild(1).parent = null;
-        }
-            
-    }*/
+
+            for (int i = 1; i < transform.GetChild(1).transform.childCount; i++)
+            {
+                Gizmos.DrawLine(transform.GetChild(1).transform.GetChild(i - 1).position, transform.GetChild(1).transform.GetChild(i).position);
+            }
+        
+    }
     #endregion
 }

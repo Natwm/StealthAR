@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class TurretBehaviours : MonoBehaviour
 {
-
+    
     public enum Status
     {
         NORMAL,
@@ -38,7 +38,7 @@ public class TurretBehaviours : MonoBehaviour
 
     [Space]
     [Header("Movement Param")]
-    [SerializeField] private List<Vector3> m_ListOfPosition;
+    [SerializeField] private List<Transform> m_ListOfPosition;
     [SerializeField] private List<Quaternion> m_ListOfRotation;
     [SerializeField] private float m_MovementSpeed;
     public int index = 0;
@@ -82,11 +82,11 @@ public class TurretBehaviours : MonoBehaviour
         {
             for (int i = 0; i < m_PositionParent.transform.childCount; i++)
             {
-                m_ListOfPosition.Add(m_PositionParent.transform.GetChild(i).position);
+                m_ListOfPosition.Add(m_PositionParent.transform.GetChild(i));
                 m_ListOfRotation.Add(m_PositionParent.transform.GetChild(i).rotation);
             }
         }
-        
+        m_PositionParent.transform.parent = null;
     }
 
     // Update is called once per frame
@@ -115,9 +115,9 @@ public class TurretBehaviours : MonoBehaviour
     {
         if (canTurn && !isStatic)
         {
-            CalculeRotation(m_ListOfPosition[index]);
+            CalculeRotation(m_ListOfPosition[index].position);
 
-            if (transform.position == m_ListOfPosition[index])
+            if (transform.position == m_ListOfPosition[index].position)
             {
                 TargetRotation = Quaternion.identity;
                 StartCoroutine(WaitUntilRotationDone());
@@ -268,7 +268,7 @@ public class TurretBehaviours : MonoBehaviour
     void TurretMovement(int index)
     {
         //transform.LookAt(m_ListOfPosition[index]);
-        MoveToPosition(m_ListOfPosition[index]);   
+        MoveToPosition(m_ListOfPosition[index].position);   
     }
 
 
@@ -292,5 +292,18 @@ public class TurretBehaviours : MonoBehaviour
         //}
         return thereIsAPlayer;
     }
+
+    #region Gizmo
+    private void OnDrawGizmos()
+    {
+        if (m_PositionParent != null)
+        {
+            for (int i = 1; i < m_PositionParent.transform.childCount; i++)
+            {
+                Gizmos.DrawLine(m_PositionParent.transform.GetChild(i - 1).position, m_PositionParent.transform.GetChild(i).position);
+            }
+        }
+    }
+    #endregion
 
 }
