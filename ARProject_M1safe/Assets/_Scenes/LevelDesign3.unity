@@ -7013,7 +7013,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3196802462761561925, guid: bf3045a1423a1664a9be485fdbb005d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf3045a1423a1664a9be485fdbb005d1, type: 3}
 --- !u!4 &370435112 stripped
 Transform:
@@ -13502,6 +13503,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 499627641}
+    - target: {fileID: 7258067454166842363, guid: 245bb29184f3b5a4496810e3b55af844,
+        type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 3344
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245bb29184f3b5a4496810e3b55af844, type: 3}
 --- !u!114 &785096635 stripped
@@ -13906,6 +13912,14 @@ PrefabInstance:
     - target: {fileID: 766257411, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334659920, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
+      propertyPath: viewRadius
+      value: 4.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334659920, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
+      propertyPath: viewAngle
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 944534557530787938, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
@@ -16153,7 +16167,8 @@ PrefabInstance:
       propertyPath: m_State
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3196802462761561925, guid: bf3045a1423a1664a9be485fdbb005d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf3045a1423a1664a9be485fdbb005d1, type: 3}
 --- !u!4 &932039016 stripped
 Transform:
@@ -17186,7 +17201,7 @@ PrefabInstance:
     - target: {fileID: 5540227244048297168, guid: 8ade4a571735095498f1f6cde673dbb2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.580998
+      value: 15.72
       objectReference: {fileID: 0}
     - target: {fileID: 5540227244048297168, guid: 8ade4a571735095498f1f6cde673dbb2,
         type: 3}
@@ -17196,7 +17211,7 @@ PrefabInstance:
     - target: {fileID: 5540227244048297168, guid: 8ade4a571735095498f1f6cde673dbb2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.7949524
+      value: 7.57
       objectReference: {fileID: 0}
     - target: {fileID: 5540227244048297168, guid: 8ade4a571735095498f1f6cde673dbb2,
         type: 3}
@@ -18138,7 +18153,8 @@ PrefabInstance:
       propertyPath: m_State
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3196802462761561925, guid: bf3045a1423a1664a9be485fdbb005d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf3045a1423a1664a9be485fdbb005d1, type: 3}
 --- !u!1 &1048799918 stripped
 GameObject:
@@ -28489,7 +28505,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3196802462761561925, guid: bf3045a1423a1664a9be485fdbb005d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf3045a1423a1664a9be485fdbb005d1, type: 3}
 --- !u!4 &1709854038 stripped
 Transform:
