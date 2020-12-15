@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 4775505}
   - component: {fileID: 4775504}
   - component: {fileID: 4775503}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1389,6 +1389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SphereTurret (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 944534557530787939, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280256483066658194, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
@@ -8504,7 +8509,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499627637}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43502828a1d50ac4ea6a349a7d0c4d0e, type: 3}
   m_Name: 
@@ -10189,6 +10194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SphereTurret (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 944534557530787939, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3765831186463575939, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
@@ -13980,6 +13990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SphereTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 944534557530787939, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280256483066658194, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
@@ -29617,6 +29632,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SphereTurret (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 944534557530787939, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19db38d62c28fd14aa41fa43994c13bb, type: 3}
 --- !u!4 &1808868249 stripped
@@ -31789,6 +31809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SphereTurret (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 944534557530787939, guid: 19db38d62c28fd14aa41fa43994c13bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280256483066658194, guid: 19db38d62c28fd14aa41fa43994c13bb,
         type: 3}
