@@ -19,7 +19,7 @@ MonoBehaviour:
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 5
     maxSimultaneousObjectTargets: 5
-    virtualSceneScaleFactor: 15
+    virtualSceneScaleFactor: 10
     useDelayedLoadingObjectTargets: 0
     modelTargetRecoWhileExtendedTracked: 1
     version: 9.3.3

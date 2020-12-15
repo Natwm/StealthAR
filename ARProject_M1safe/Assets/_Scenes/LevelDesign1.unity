@@ -2068,7 +2068,7 @@ Transform:
   m_GameObject: {fileID: 179158729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14.056, y: 1.381, z: -6.866}
-  m_LocalScale: {x: 5.0188, y: 1, z: 3.2892}
+  m_LocalScale: {x: 7.100096, y: 1.9539, z: 6.1366606}
   m_Children: []
   m_Father: {fileID: 1315422355}
   m_RootOrder: 25
@@ -9481,51 +9481,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89c1de936f6c04749aa14a525fb43be5, type: 3}
---- !u!1 &1130422851 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7630683963592951636, guid: 1ebf3990a88c9c046b81fac09f99a8b3,
+--- !u!4 &1130422854 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7630683963592951639, guid: 1ebf3990a88c9c046b81fac09f99a8b3,
     type: 3}
   m_PrefabInstance: {fileID: 1715573147}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &1130422854
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130422851}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &1132852132 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8924472369026384764, guid: 7af00890e568c184eb764cca5d609875,
@@ -11636,6 +11597,7 @@ Transform:
   - {fileID: 20806908}
   - {fileID: 179158731}
   - {fileID: 1679627962}
+  - {fileID: 1130422854}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15197,8 +15159,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679627960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.43, y: -1.36, z: 0.72}
-  m_LocalScale: {x: 5.0188, y: 1, z: 3.2892}
+  m_LocalPosition: {x: 16.456, y: -1.5808, z: -0.21284}
+  m_LocalScale: {x: 6.595707, y: 2.181, z: 4.85157}
   m_Children: []
   m_Father: {fileID: 1315422355}
   m_RootOrder: 26
@@ -15529,7 +15491,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1315422355}
     m_Modifications:
     - target: {fileID: 7630683962800767024, guid: 1ebf3990a88c9c046b81fac09f99a8b3,
         type: 3}
@@ -15604,7 +15566,7 @@ PrefabInstance:
     - target: {fileID: 7630683963592951639, guid: 1ebf3990a88c9c046b81fac09f99a8b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 7630683963592951639, guid: 1ebf3990a88c9c046b81fac09f99a8b3,
         type: 3}
@@ -16108,7 +16070,7 @@ MonoBehaviour:
     name: AW-117
     sentences:
     - What happens to me?
-  - image: {fileID: 0}
+  - image: {fileID: 21300000, guid: 3ac129a76e4c9b34ca9036f138f1fd1f, type: 3}
     name: Warden
     sentences:
     - I'm Hurricane Spacship Captain, We have detected that you were off neuronal
